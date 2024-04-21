@@ -4,11 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scroll Transition Gallery</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+
+    <script>
+        window.onload = function() {
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = '/assets/css/styles.css?v=' + new Date().getTime();
+            document.getElementsByTagName('head')[0].appendChild(link);
+        }
+    </script>    
 </head>
 <body>
-    <div class="background-section" id="fixed">
+    <div class="background-section image-container" id="fixed">
         <img src="/assets/images/landscape_morning.png" alt="Imagen de paisaje por la mañana" style="opacity: 1;">
         <img src="/assets/images/landscape_afternoon.png" alt="Imagen de paisaje por la tarde" style="opacity: 0;">
         <img src="/assets/images/landscape_evening.png" alt="Imagen de paisaje por la tarde" style="opacity: 0;">
@@ -37,10 +46,13 @@
                 <li><h3>After Party: Finca Sorribas, Villaviciosa</h3></li>
                 <li><h3>Coordenadas: 43.479937, -5.447823</h3></li>
             </ul>
+            <div id="typeform-container"></div>
+            <div data-tf-live="01HW0Z5XWYASAQ39MZ816T1AHK"></div>
         </div>
         <!-- <button id="prevImage">Imagen Anterior</button>
         <button id="nextImage">Siguiente Imagen</button> -->
     </div>
+    <script src="//embed.typeform.com/next/embed.js"></script>
     <script src="/assets/js/script.js"></script>
 </body>
 </html>
