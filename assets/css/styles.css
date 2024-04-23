@@ -6,11 +6,12 @@
 
 body, html {
     height: 100%;
+    width: 100%;
     margin: 0;
     display: flex;
     justify-content: center; 
     align-items: center; 
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Cinzel', sans-serif;
     position: relative; 
     overflow: hidden;
     scroll-behavior: smooth;
@@ -18,6 +19,7 @@ body, html {
 
 h1, h2, h3 {
     color: #141414; 
+    font-weight: 400;
 }
 
 h1 {
@@ -48,7 +50,8 @@ li {
     height: calc(100vh - 25%);
     margin: 50px auto;
     overflow-y: auto;
-    padding: 80px;
+    padding: 40px;
+    text-align: -webkit-center;
 }
 
 .background-section {
@@ -62,11 +65,15 @@ li {
 
 .background-section img {
     position: absolute;
+    bottom: 0; /* Alinea la imagen al fondo del contenedor */
+    left: 0; /* Alinea la imagen a la izquierda del contenedor */
+    width: 100%; /* Asegúrate de que la imagen cubra todo el ancho del contenedor */
+    height: auto; 
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     opacity: 0; 
-    transition: opacity 1s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
 }
 
 .background-section img:first-child {
@@ -97,4 +104,83 @@ li span.separator-line {
     height: 2px; 
     background-color: #000000; 
     margin: auto;
+}
+
+.image-container {
+    position: relative;
+    overflow: hidden;
+}
+  
+.image-container img {
+    display: block; /* Asegura que no haya espacio extra debajo de la imagen */
+    width: 100%; /* Ajusta al contenedor */
+    height: auto; /* Mantiene la proporción */
+}
+  
+.image-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.5; /* Ajusta esto según la transparencia deseada */
+    transition: opacity 2s ease-in-out; /* Transición suave para la opacidad */
+}
+
+.morning {
+    background-image: linear-gradient(to top, #80EDEB 0%, #FFFFF1 100%);
+}
+
+.afternoon {
+    background-image: linear-gradient(to top, #FFD800 0%, #FFAC00 100%);
+}
+
+.night {
+    background-image: linear-gradient(to top, #06193F 0%, #180B34 100%);
+}
+
+@media only screen and (min-width: 1024px) {
+/* Estilos para desktop */
+}
+
+@media only screen 
+  and (min-device-width : 768px) 
+  and (max-device-width : 1024px) 
+  and (orientation : portrait) {
+    /* Estilos para iPad en vertical */
+}   
+
+@media only screen 
+  and (min-device-width : 768px) 
+  and (max-device-width : 1024px) 
+  and (orientation : landscape) {
+    /* Estilos para iPad en horizontal */
+}
+
+@media only screen and (max-width: 767px) {
+    /* Estilos para móviles */
+}
+
+[data-tf-live] {
+    width: 60%;  /* Ajusta la anchura del formulario */
+    min-width: 300px;
+    height: 700px; /* Ajusta la altura según tus necesidades */
+}
+
+#typeform-container {
+    background-color: rgba(0, 0, 0, 0.5); /* Negro semi-transparente */
+}
+
+.hMEawv *, .hMEawv ::before, .hMEawv ::after {
+    box-sizing: inherit;
+    -webkit-font-smoothing: antialiased;
+}
+
+.hMEawv::after {
+    background: transparent;
+}
+
+#typeform-container {
+    width: 50%;
 }

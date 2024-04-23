@@ -1,10 +1,10 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     var listContainer = document.querySelector(".list-container");
-    var numberOfSections = 4; // Número de tramos
+    var numberOfSections = 3; // Número de tramos
     var currentSection = 0; // Inicialmente en el primer tramo
 
     // Evento de desplazamiento
-    listContainer.addEventListener("scroll", function() {
+    listContainer.addEventListener("scroll", function () {
         // Obtiene la posición de desplazamiento vertical actual
         var scrollTop = listContainer.scrollTop;
         // Muestra la posición de desplazamiento por consola
@@ -17,6 +17,8 @@ document.addEventListener("DOMContentLoaded", function() {
         if (newSection !== currentSection) {
             // Muestra la imagen correspondiente a la nueva sección
             showImage(newSection);
+            // Cambia el fondo gradiente en función de la sección
+            changeBackgroundGradient(newSection);
             // Actualiza la sección actual
             currentSection = newSection;
         }
@@ -26,19 +28,39 @@ document.addEventListener("DOMContentLoaded", function() {
     function showImage(section) {
         // Oculta todas las imágenes
         var images = document.querySelectorAll(".background-section img");
-        images.forEach(function(image) {
+        images.forEach(function (image) {
             image.style.opacity = 0;
         });
         // Muestra la imagen correspondiente a la sección actual
         images[section].style.opacity = 1;
     }
+
+    // Función para cambiar el fondo gradiente en función de la sección
+    function changeBackgroundGradient(section) {
+        var backgroundContainer = document.querySelector(".image-container");
+        backgroundContainer.classList.remove("morning", "afternoon", "night");
+        switch (section) {
+            case 0:
+                backgroundContainer.classList.add("morning");
+                break;
+            case 1:
+                backgroundContainer.classList.add("afternoon");
+                break;
+            case 2:
+                backgroundContainer.classList.add("night");
+                break;
+            default:
+                backgroundContainer.classList.add("morning");
+                break;
+        }
+    }
 });
 
-document.getElementById('nextImage').addEventListener('click', function() {
+document.getElementById('nextImage').addEventListener('click', function () {
     changeImage(1); // Avanza a la siguiente imagen
 });
 
-document.getElementById('prevImage').addEventListener('click', function() {
+document.getElementById('prevImage').addEventListener('click', function () {
     changeImage(-1); // Regresa a la imagen anterior
 });
 
