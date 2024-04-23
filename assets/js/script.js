@@ -58,3 +58,33 @@ function changeImage(direction) {
 }
 
 
+window.addEventListener('wheel', function(event) {
+    event.preventDefault(); // Evita el desplazamiento predeterminado
+
+    const delta = Math.sign(event.deltaY); // Obtiene la dirección del desplazamiento
+    // Ajusta la velocidad del desplazamiento
+    const scrollSpeed = 1000; // Cuanto mayor sea el valor, más lento será el desplazamiento
+    const scrollAmount = delta * scrollSpeed;
+    console.log("valor del desplazamiento:" , scrollAmount)
+
+    window.scrollBy(0, scrollAmount); // Realiza el desplazamiento
+});
+
+let startY; // Variable para almacenar la posición inicial del toque
+
+window.addEventListener('touchstart', function(event) {
+    startY = event.touches[0].clientY; // Guarda la posición inicial del toque
+});
+
+window.addEventListener('touchmove', function(event) {
+    event.preventDefault(); // Evita el desplazamiento predeterminado
+
+    const deltaY = event.touches[0].clientY - startY; // Calcula la distancia del desplazamiento
+
+    // Ajusta la velocidad del desplazamiento
+    const scrollSpeed = 1; // Cuanto mayor sea el valor, más lento será el desplazamiento
+    const scrollAmount = deltaY * scrollSpeed;
+
+    window.scrollBy(0, scrollAmount); // Realiza el desplazamiento
+});
+
