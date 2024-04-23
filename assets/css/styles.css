@@ -124,8 +124,20 @@ li span.separator-line {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: linear-gradient(to top,#80EDEB  0%, #FFFFF1 100%);
     opacity: 0.5; /* Ajusta esto según la transparencia deseada */
+    transition: opacity 2s ease-in-out; /* Transición suave para la opacidad */
+}
+
+.morning {
+    background-image: linear-gradient(to top, #80EDEB 0%, #FFFFF1 100%);
+}
+
+.afternoon {
+    background-image: linear-gradient(to top, #FFD800 0%, #FFAC00 100%);
+}
+
+.night {
+    background-image: linear-gradient(to top, #06193F 0%, #180B34 100%);
 }
 
 @media only screen and (min-width: 1024px) {
