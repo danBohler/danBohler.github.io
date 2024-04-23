@@ -1,6 +1,47 @@
+function updateImageSources() {
+    var width = window.innerWidth;
+    var height = window.innerHeight;
+
+    var morning = document.getElementById('landscape_morning');
+    var afternoon = document.getElementById('landscape_afternoon');
+    var evening = document.getElementById('landscape_evening');
+    var night = document.getElementById('landscape_night');
+
+    if (width >= 1000) {
+        // Desktop
+        morning.src = '/assets/images/desktop_landscape_morning.png';
+        afternoon.src = '/assets/images/desktop_landscape_afternoon.png';
+        evening.src = '/assets/images/desktop_landscape_evening.png';
+        night.src = '/assets/images/desktop_landscape_night.png';
+        console.log("Desktop")
+    } else if (width >= 621 && width <= 999 && height > width) {
+        // Tablet Portrait
+        morning.src = '/assets/images/tablet_landscape_morning.png';
+        afternoon.src = '/assets/images/tablet_landscape_afternoon.png';
+        evening.src = '/assets/images/tablet_landscape_evening.png';
+        night.src = '/assets/images/tablet_landscape_night.png';
+        console.log("Tablet Portrait")
+    } else if (width >= 621 && width <= 999) {
+        // Tablet Landscape
+        morning.src = '/assets/images/desktop_landscape_morning.png';
+        afternoon.src = '/assets/images/desktop_landscape_afternoon.png';
+        evening.src = '/assets/images/desktop_landscape_evening.png';
+        night.src = '/assets/images/desktop_landscape_night.png';
+        console.log("Tablet Landscape")
+    } else if (width < 620) {
+        // Mobile
+        morning.src = '/assets/images/mobile_landscape_morning.png';
+        afternoon.src = '/assets/images/mobile_landscape_afternoon.png';
+        evening.src = '/assets/images/mobile_landscape_evening.png';
+        night.src = '/assets/images/mobile_landscape_night.png';
+        console.log("Mobile")
+    }
+}
+
+
 document.addEventListener("DOMContentLoaded", function () {
     var listContainer = document.querySelector(".list-container");
-    var numberOfSections = 3; // Número de tramos
+    var numberOfSections = 4; // Número de tramos
     var currentSection = 0; // Inicialmente en el primer tramo
 
     // Evento de desplazamiento
@@ -8,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Obtiene la posición de desplazamiento vertical actual
         var scrollTop = listContainer.scrollTop;
         // Muestra la posición de desplazamiento por consola
-        console.log("Posición de desplazamiento:", scrollTop);
+        // console.log("Posición de desplazamiento:", scrollTop);
         // Calcula el tamaño de cada tramo
         var sectionSize = listContainer.scrollHeight / numberOfSections;
         // Determina la sección actual en base a la posición de desplazamiento
@@ -47,6 +88,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 backgroundContainer.classList.add("afternoon");
                 break;
             case 2:
+                backgroundContainer.classList.add("evening");
+                break;
+            case 3:
                 backgroundContainer.classList.add("night");
                 break;
             default:
@@ -54,14 +98,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 break;
         }
     }
-});
-
-document.getElementById('nextImage').addEventListener('click', function () {
-    changeImage(1); // Avanza a la siguiente imagen
-});
-
-document.getElementById('prevImage').addEventListener('click', function () {
-    changeImage(-1); // Regresa a la imagen anterior
 });
 
 function changeImage(direction) {
@@ -78,35 +114,3 @@ function changeImage(direction) {
     const nextIndex = (visibleIndex + direction + images.length) % images.length;
     images[nextIndex].style.opacity = 1; // Muestra la siguiente imagen
 }
-
-
-window.addEventListener('wheel', function(event) {
-    event.preventDefault(); // Evita el desplazamiento predeterminado
-
-    const delta = Math.sign(event.deltaY); // Obtiene la dirección del desplazamiento
-    // Ajusta la velocidad del desplazamiento
-    const scrollSpeed = 1000; // Cuanto mayor sea el valor, más lento será el desplazamiento
-    const scrollAmount = delta * scrollSpeed;
-    console.log("valor del desplazamiento:" , scrollAmount)
-
-    window.scrollBy(0, scrollAmount); // Realiza el desplazamiento
-});
-
-let startY; // Variable para almacenar la posición inicial del toque
-
-window.addEventListener('touchstart', function(event) {
-    startY = event.touches[0].clientY; // Guarda la posición inicial del toque
-});
-
-window.addEventListener('touchmove', function(event) {
-    event.preventDefault(); // Evita el desplazamiento predeterminado
-
-    const deltaY = event.touches[0].clientY - startY; // Calcula la distancia del desplazamiento
-
-    // Ajusta la velocidad del desplazamiento
-    const scrollSpeed = 1; // Cuanto mayor sea el valor, más lento será el desplazamiento
-    const scrollAmount = deltaY * scrollSpeed;
-
-    window.scrollBy(0, scrollAmount); // Realiza el desplazamiento
-});
-

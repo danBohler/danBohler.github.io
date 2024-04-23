@@ -3,55 +3,55 @@
     display: none;
 }
 
+/* ESTILOS DE LA WEB */
 
-body, html {
+body,
+html {
     height: 100%;
     width: 100%;
     margin: 0;
     display: flex;
-    justify-content: center; 
-    align-items: center; 
-    font-family: 'Cinzel', sans-serif;
-    position: relative; 
+    justify-content: center;
+    align-items: center;
+    font-family: 'Red Hat Display', sans-serif;
+    position: relative;
     overflow: hidden;
     scroll-behavior: smooth;
 }
 
-h1, h2, h3 {
-    color: #141414; 
+h1,
+h2,
+h3 {
+    color: #141414;
     font-weight: 400;
 }
 
 h1 {
-    font-size: 64px;
+    font-size: 38px;
 }
 
 h3 {
-    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
 }
 
 ul {
-    list-style-type: none; 
+    list-style-type: none;
     padding: 0;
 }
 
-li {
-    margin: 8px 0;
-    padding: 10px;
-    border-radius: 5px;
-    width: 100%;
-    text-align: center;
+.bold {
+    font-weight: 500;
 }
 
-.list-container {
-    margin: 0px !important;
-    position: relative;
-    z-index: 2;
-    height: calc(100vh - 25%);
-    margin: 50px auto;
-    overflow-y: auto;
-    padding: 40px;
-    text-align: -webkit-center;
+.subtitle {
+    letter-spacing: 2px;
+    line-height: 24px;
+    margin: 8% 0 8% 0;
+}
+
+.shadow {
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .background-section {
@@ -60,19 +60,22 @@ li {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1; 
+    z-index: 1;
 }
 
 .background-section img {
     position: absolute;
-    bottom: 0; /* Alinea la imagen al fondo del contenedor */
-    left: 0; /* Alinea la imagen a la izquierda del contenedor */
-    width: 100%; /* Asegúrate de que la imagen cubra todo el ancho del contenedor */
-    height: auto; 
+    bottom: 0;
+    /* Alinea la imagen al fondo del contenedor */
+    left: 0;
+    /* Alinea la imagen a la izquierda del contenedor */
+    width: 100%;
+    /* Asegúrate de que la imagen cubra todo el ancho del contenedor */
+    height: auto;
     width: 100%;
     height: 100%;
     object-fit: contain;
-    opacity: 0; 
+    opacity: 0;
     transition: opacity 0.5s ease-in-out;
 }
 
@@ -80,29 +83,36 @@ li {
     opacity: 1;
 }
 
-#prevImage, #nextImage {
-    position: absolute;
-    top: 50%;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    z-index: 10; 
+.list-container {
+    margin: 14% 16px 0 16px !important;
+    position: relative;
+    z-index: 2;
+    height: calc(100vh - 25%);
+    margin: 50px auto;
+    overflow-y: auto;
+    text-align: -webkit-center;
 }
 
-#prevImage {
-    left: 10%; 
+#title-header {
+    font-family: "Ibarra Real Nova", serif;
+    font-weight: 600;
+    margin: 8% 0 8% 0;
+    letter-spacing: 2px;
+    line-height: 40px;
 }
 
-#nextImage {
-    right: 10%; 
+#invite-text {
+    font-family: "Red Hat Text", serif;
+    font-weight: 400;
+    margin: 8% 0 8% 0;
 }
 
 li span.separator-line {
-    width: 160px;
+    width: 64px;
     content: '';
-    display: block; 
-    height: 2px; 
-    background-color: #000000; 
+    display: block;
+    height: 1px;
+    background-color: #000000;
     margin: auto;
 }
 
@@ -110,13 +120,16 @@ li span.separator-line {
     position: relative;
     overflow: hidden;
 }
-  
+
 .image-container img {
-    display: block; /* Asegura que no haya espacio extra debajo de la imagen */
-    width: 100%; /* Ajusta al contenedor */
-    height: auto; /* Mantiene la proporción */
+    display: block;
+    /* Asegura que no haya espacio extra debajo de la imagen */
+    width: 100%;
+    /* Ajusta al contenedor */
+    height: auto;
+    /* Mantiene la proporción */
 }
-  
+
 .image-container::before {
     content: "";
     position: absolute;
@@ -124,8 +137,10 @@ li span.separator-line {
     left: 0;
     right: 0;
     bottom: 0;
-    opacity: 0.5; /* Ajusta esto según la transparencia deseada */
-    transition: opacity 2s ease-in-out; /* Transición suave para la opacidad */
+    opacity: 0.5;
+    /* Ajusta esto según la transparencia deseada */
+    transition: opacity 2s ease-in-out;
+    /* Transición suave para la opacidad */
 }
 
 .morning {
@@ -140,39 +155,42 @@ li span.separator-line {
     background-image: linear-gradient(to top, #06193F 0%, #180B34 100%);
 }
 
-@media only screen and (min-width: 1024px) {
-/* Estilos para desktop */
+.flex-container {
+    position: fixed;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: flex-end; /* Alinea el contenido al fondo del contenedor */
+    height: 100%; /* Toma toda la altura de la vista */
 }
 
-@media only screen 
-  and (min-device-width : 768px) 
-  and (max-device-width : 1024px) 
-  and (orientation : portrait) {
-    /* Estilos para iPad en vertical */
-}   
-
-@media only screen 
-  and (min-device-width : 768px) 
-  and (max-device-width : 1024px) 
-  and (orientation : landscape) {
-    /* Estilos para iPad en horizontal */
+#float-button {
+    height: 64px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-@media only screen and (max-width: 767px) {
-    /* Estilos para móviles */
-}
+
+/* ESTILOS PARA EL FORM */
 
 [data-tf-live] {
-    width: 60%;  /* Ajusta la anchura del formulario */
+    width: 60%;
+    /* Ajusta la anchura del formulario */
     min-width: 300px;
-    height: 700px; /* Ajusta la altura según tus necesidades */
+    height: 700px;
+    /* Ajusta la altura según tus necesidades */
 }
 
 #typeform-container {
-    background-color: rgba(0, 0, 0, 0.5); /* Negro semi-transparente */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Negro semi-transparente */
 }
 
-.hMEawv *, .hMEawv ::before, .hMEawv ::after {
+.hMEawv *,
+.hMEawv ::before,
+.hMEawv ::after {
     box-sizing: inherit;
     -webkit-font-smoothing: antialiased;
 }
@@ -183,4 +201,46 @@ li span.separator-line {
 
 #typeform-container {
     width: 50%;
+}
+
+
+/* RESPONSIVE MEDIA QUERYS */
+
+@media only screen and (min-width: 1024px) {
+    /* Estilos para desktop */
+}
+
+@media only screen and (min-device-width : 393px) and (max-device-width : 620px) and (orientation : portrait) {
+
+    /* Estilos para iPad en vertical */
+    .list-container {
+        margin: 40px 16px 0 16px !important;
+    }
+
+    #title-header {
+        margin: 40px 0 40px 0;
+    }
+
+    #invite-text {
+        margin: 40px 0 40px 0;
+    }
+
+    .subtitle {
+        margin: 40px 0 40px 0;
+    }
+
+    .flex-container {
+        bottom: 129px;
+    }
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+    /* Estilos para iPad en horizontal */
+}
+
+@media only screen and (max-width: 620x) {
+    /* Estilos para móviles */
+    .flex-container {
+        bottom: 60px;
+    }
 }

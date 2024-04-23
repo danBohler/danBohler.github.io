@@ -1,57 +1,72 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scroll Transition Gallery</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
 
-    <script>
-        window.onload = function() {
-            var link = document.createElement('link');
-            link.rel = 'stylesheet';
-            link.href = '/assets/css/styles.css?v=' + new Date().getTime();
-            document.getElementsByTagName('head')[0].appendChild(link);
-        }
-    </script>    
-</head>
-<body>
-    <div class="background-section image-container morning" id="fixed">
-        <img src="/assets/images/landscape_morning.svg" alt="Imagen de paisaje por la mañana" style="opacity: 1;">
-        <img src="/assets/images/landscape_afternoon.svg" alt="Imagen de paisaje por la tarde" style="opacity: 0;">
-        <img src="/assets/images/landscape_night.svg" alt="Imagen de paisaje por la noche" style="opacity: 0;">
-        <div class="list-container">
-            <ul>
-                <li id="scrollPosition"><h2>24 / AGOSTO / 24</h2></li>
-                <li><span class="separator-line"></span></li>
-                <li><h1>DAN & CAR</h1></li>
-                <li><span class="separator-line"></span></li>
-                <li><h3>Tras años de aventuras juntos<br>ha llegado el momento de celebrar<br>con quienes más queremos.<br>¿Nos acompañas?</h3></li>
-                <li><h2>DURACION OFICIAL</h2></li>
-                <li><h3>12:00 a 24:00</h3></li>
-                <li><h2>LUGAR</h2></li>
-                <li><h3>Hostería Torazo</h3></li>
-                <li><h2>ASISTENCIA</h2></li>
-                <li><h3>Confirmación de asistencia: nº de comensales con niños</h3></li>
-                <li><h3>Alergias/Intolerancias</h3></li>
-                <li><h2>CEREMONIA</h2></li>
-                <li><h3>13:00</h3></li>
-                <li><h2>TRANSPORTE</h2></li>
-                <li><h3>Bus ida: 12:00 Villaviciosa-Torazo</h3></li>
-                <li><h3>Bus vuelta: 24:00 Torazo-Villaviciosa</h3></li>
-                <li><h2>POST PARTY</h2></li>
-                <li><h3>Y para quienes la noche aún sea joven,<br>tenemos preparado algo muy especial.<br> La celebración continúa desde las 24:00<br> hasta que el cuerpo aguante en Finca Sorribas,<br> un lugar mágico en Villaviciosa.<br> La aventura empieza a un kilómetro de la parada del bus.<br> Marca las coordenadas 43.479937, -5.447823 en tu mapa estelar o simplemente<br> sigue la luz de las estrellas hasta nosotros.<br> La fiesta corre de nuestra cuenta<br> y nuestra cuenta es ESXX XXXX XXXX XXXX XXXX XXXX.</h3></li>
-                <li><h3>After Party: Finca Sorribas, Villaviciosa</h3></li>
-                <li><h3>Coordenadas: 43.479937, -5.447823</h3></li>
-            </ul>
-            <div id="typeform-container"></div>
-            <div data-tf-live="01HW0Z5XWYASAQ39MZ816T1AHK"></div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Scroll Transition Gallery</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:ital,wght@0,400..700;1,400..700&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap"
+            rel="stylesheet">
+        <script src="/assets/js/script.js"></script>
+        <script>
+            window.onload = function () {
+                var link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = '/assets/css/styles.css?v=' + new Date().getTime();
+                document.getElementsByTagName('head')[0].appendChild(link);
+
+                // Inicializar al cargar la página
+                updateImageSources();
+
+                // Actualizar al cambiar el tamaño de la ventana
+                window.onresize = updateImageSources;
+            }
+        </script>
+    </head>
+
+    <body>
+        <div class="background-section image-container morning" id="fixed">
+            <img id="landscape_morning" src="/assets/images/mobile_landscape_morning.png"
+                alt="Imagen de paisaje por la mañana" style="opacity: 1;">
+            <img id="landscape_afternoon" src="/assets/images/mobile_landscape_afternoon.png"
+                alt="Imagen de paisaje al mediodía" style="opacity: 0;">
+            <img id="landscape_evening" src="/assets/images/mobile_landscape_evening.png"
+                alt="Imagen de paisaje por la tarde" style="opacity: 0;">
+            <img id="landscape_night" src="/assets/images/mobile_landscape_night.png"
+                alt="Imagen de paisaje por la noche" style="opacity: 0;">
+            <div class="list-container">
+                <ul>
+                    <li>
+                        <h3 class="subtitle shadow bold">24 / AGOSTO / 24</h3>
+                    </li>
+                    <li><span class="separator-line"></span></li>
+                    <li>
+                        <h1 class="shadow" id="title-header">DAN & CAR</h1>
+                    </li>
+                    <li><span class="separator-line"></span></li>
+                    <li>
+                        <h3 id="invite-text">Tras años de aventuras juntos ha <br> llegado el momento de celebrar con <br> quienes más
+                            queremos.<br>¡Os esperamos a todos!</h3>
+                    </li>
+                    <li><span class="separator-line"></span></li>
+                    <li>
+                        <h3 class="subtitle bold">TORAZO / ASTURIAS</h3>
+                    </li>
+                    <li></li>
+                    
+                </ul>
+                <!-- <div id="typeform-container"></div>
+                <div data-tf-live="01HW0Z5XWYASAQ39MZ816T1AHK"></div> -->
+            </div>
+            <id class="flex-container">
+                <img id="float-button" src="/assets/icons/scroll-button.png" alt="Icono del botón">
+            </id>
         </div>
-        <button id="prevImage" hidden>Imagen Anterior</button>
-        <button id="nextImage" hidden>Siguiente Imagen</button>
-    </div>
-    <script src="//embed.typeform.com/next/embed.js"></script>
-    <script src="/assets/js/script.js"></script>
-</body>
+        <!-- <script src="//embed.typeform.com/next/embed.js"></script> -->
+
+    </body>
+
 </html>
