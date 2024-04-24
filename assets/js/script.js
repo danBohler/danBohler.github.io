@@ -40,29 +40,30 @@ function updateImageSources() {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    var listContainer = document.querySelector(".list-container");
-    var numberOfSections = 4; // Número de tramos
-    var currentSection = 0; // Inicialmente en el primer tramo
+    var myScreenOrientation = window.screen.orientation;
+    myScreenOrientation.lock("portrait");
+    
+    const floatButton = document.getElementById('float-button');
+    const uls = document.querySelectorAll('#scrollContainer ul'); // Selecciona todos los ul dentro del contenedor
+    let currentIndex = 0; // Empieza por mostrar el primer ul
 
+    floatButton.addEventListener('click', function() {
+        uls[currentIndex].style.opacity = 0; // Oculta el ul actual
+        currentIndex = (currentIndex + 1) % uls.length; // Incrementa el índice o vuelve al inicio
+        uls[currentIndex].style.opacity = 1; // Muestra el siguiente ul
+        showImage(currentIndex);
+        changeBackgroundGradient(currentIndex);
+    });
+
+    // Simular un clic en el botón floatButton
+    function triggerButtonClick() {
+        floatButton.click();
+    }
+
+    var listContainer = document.querySelector(".list-container");
     // Evento de desplazamiento
     listContainer.addEventListener("scroll", function () {
-        // Obtiene la posición de desplazamiento vertical actual
-        var scrollTop = listContainer.scrollTop;
-        // Muestra la posición de desplazamiento por consola
-        // console.log("Posición de desplazamiento:", scrollTop);
-        // Calcula el tamaño de cada tramo
-        var sectionSize = listContainer.scrollHeight / numberOfSections;
-        // Determina la sección actual en base a la posición de desplazamiento
-        var newSection = Math.floor(scrollTop / sectionSize);
-        // Si la sección actual es diferente de la sección anterior, cambia la imagen
-        if (newSection !== currentSection) {
-            // Muestra la imagen correspondiente a la nueva sección
-            showImage(newSection);
-            // Cambia el fondo gradiente en función de la sección
-            changeBackgroundGradient(newSection);
-            // Actualiza la sección actual
-            currentSection = newSection;
-        }
+        // triggerButtonClick();
     });
 
     // Función para mostrar la imagen correspondiente a la sección actual
@@ -79,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Función para cambiar el fondo gradiente en función de la sección
     function changeBackgroundGradient(section) {
         var backgroundContainer = document.querySelector(".image-container");
-        backgroundContainer.classList.remove("morning", "afternoon", "night");
+        backgroundContainer.classList.remove("morning", "afternoon", "evening", "night");
         switch (section) {
             case 0:
                 backgroundContainer.classList.add("morning");

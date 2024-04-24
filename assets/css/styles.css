@@ -36,6 +36,12 @@ h3 {
 }
 
 ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* height: calc(100vh + 1%); */
+    transition: opacity 0.5s ease;
     list-style-type: none;
     padding: 0;
 }
@@ -84,13 +90,24 @@ ul {
 }
 
 .list-container {
-    margin: 14% 16px 0 16px !important;
+    position: relative;
+    width: 100%;
+    /* Ajusta esto según el ancho deseado */
+    height: auto;
+    /* O un valor fijo si prefieres una altura específica */
+    margin: 4% 0 0 0 !important;
     position: relative;
     z-index: 2;
     height: calc(100vh - 25%);
-    margin: 50px auto;
     overflow-y: auto;
     text-align: -webkit-center;
+}
+
+#info-morning,
+#info_afternoon,
+#evening,
+#info_night {
+    /* margin: 8% 0 0 0 !important; */
 }
 
 #title-header {
@@ -107,6 +124,17 @@ ul {
     margin: 8% 0 8% 0;
 }
 
+#after-text {
+    font-family: "Red Hat Text", serif;
+    font-weight: 400;
+}
+
+.info-text {
+    font-family: "Red Hat Text", serif;
+    line-height: 24px;
+    margin: 0;
+}
+
 li span.separator-line {
     width: 64px;
     content: '';
@@ -114,6 +142,23 @@ li span.separator-line {
     height: 1px;
     background-color: #000000;
     margin: auto;
+}
+
+div span.separator-dot {
+    width: 1px;
+    content: '';
+    display: block;
+    height: 1px;
+    background-color: #000000;
+    margin: 10px auto;
+}
+
+div span.after-dot {
+    display: none;
+}
+
+div h3#iban {
+    margin: 16px 0;
 }
 
 .image-container {
@@ -143,33 +188,57 @@ li span.separator-line {
     /* Transición suave para la opacidad */
 }
 
+.info-content {
+    /* margin: 8% 0 0 0;
+    height: 100px; */
+}
+
+#info_afternoon {
+    margin: 8% 0 0 0;
+}
+
+.info-content>.info-icons {
+    position: relative;
+    height: 24px;
+    width: 24px;
+    margin: 16px 0 10px 0;
+    opacity: 1!important;
+}
+
 .morning {
     background-image: linear-gradient(to top, #80EDEB 0%, #FFFFF1 100%);
 }
 
 .afternoon {
-    background-image: linear-gradient(to top, #FFD800 0%, #FFAC00 100%);
+    background-image: linear-gradient(to top, #7dbcda 0%, #b4afa3 100%);
+}
+
+.evening {
+    background-image: linear-gradient(to top, #FFD800 0%, #c0b7a5 100%);
 }
 
 .night {
-    background-image: linear-gradient(to top, #06193F 0%, #180B34 100%);
+    background-image: linear-gradient(to top, #3d3d3f 0%, #483375 100%);
 }
 
 .flex-container {
-    position: fixed;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center; /* Centra horizontalmente el contenido */
-    align-items: flex-end; /* Alinea el contenido al fondo del contenedor */
-    height: 100%; /* Toma toda la altura de la vista */
+    position: fixed;  /* Fija la posición del contenedor en la pantalla */
+    bottom: 8%;         /* Centra verticalmente */
+    left: 50%;        /* Centra horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta la posición precisa del centro */
+    z-index: 1000;    /* Asegura que el botón esté por encima de otros contenidos */
 }
 
 #float-button {
     height: 64px;
+    width: 64px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+#float-button img {
+   opacity: 1!important;
 }
 
 
@@ -214,7 +283,7 @@ li span.separator-line {
 
     /* Estilos para iPad en vertical */
     .list-container {
-        margin: 40px 16px 0 16px !important;
+        margin: 40px 0 0 0 !important;
     }
 
     #title-header {
@@ -232,6 +301,20 @@ li span.separator-line {
     .flex-container {
         bottom: 129px;
     }
+
+    div span.separator-dot {
+        height: 40px;
+    }
+
+    div span.after-dot {
+        display: block;
+        height: 64px;
+    }
+
+    div h3#iban {
+        margin: 24px 0;
+    }
+
 }
 
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
@@ -239,6 +322,7 @@ li span.separator-line {
 }
 
 @media only screen and (max-width: 620x) {
+
     /* Estilos para móviles */
     .flex-container {
         bottom: 60px;
