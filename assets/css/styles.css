@@ -220,7 +220,7 @@ div h3#iban {
     right: 0;
     bottom: 0;
     left: 0;
-    background-image: linear-gradient(to top right, #A1D6E6 0%, #F9FFEA 100%);
+    background-image: linear-gradient(to top right, #80EDEB 0%, #FFFFF1 100%);
     z-index: -1;
     transition: opacity 0.5s linear;
     opacity: 0;
@@ -240,7 +240,7 @@ div h3#iban {
     right: 0;
     bottom: 0;
     left: 0;
-    background-image: linear-gradient(to top right, #ffa600 0%, #c0b7a5 100%);
+    background-image: linear-gradient(to top right, #A1D6E6 0%, #F9FFEA 100%);
     z-index: -1;
     transition: opacity 0.5s linear;
     opacity: 0;
@@ -260,7 +260,7 @@ div h3#iban {
     right: 0;
     bottom: 0;
     left: 0;
-    background-image: linear-gradient(to top right, #7dbcda 0%, #9b968b 100%);
+    background-image: linear-gradient(to top right, #ffa600 0%, #c0b7a5 100%);
     z-index: -1;
     transition: opacity 0.5s linear;
     opacity: 0;
@@ -280,7 +280,7 @@ div h3#iban {
     right: 0;
     bottom: 0;
     left: 0;
-    background-image: linear-gradient(to top right, #80EDEB 0%, #FFFFF1 100%);
+    background-image: linear-gradient(to top right, #7dbcda 0%, #9b968b 100%);
     z-index: -1;
     transition: opacity 0.5s linear;
     opacity: 0;
@@ -398,6 +398,9 @@ div h3#iban {
 }
 
 @media only screen and (min-device-width : 393px) and (max-device-width : 500px) and (orientation : portrait) {
+    .flex-container {
+        bottom: 12%;
+    }
     #sky_morning {
         min-width: calc(100vw* 1.5);
         max-width: calc(100vw* 0.9);
