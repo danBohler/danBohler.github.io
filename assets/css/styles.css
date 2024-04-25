@@ -60,6 +60,15 @@ ul {
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+#sky_morning {
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: calc(100vw* 1.7);
+    top: 1%;
+}
+
 .background-section {
     position: fixed;
     top: 0;
@@ -72,11 +81,8 @@ ul {
 .background-section img {
     position: absolute;
     bottom: 0;
-    /* Alinea la imagen al fondo del contenedor */
     left: 0;
-    /* Alinea la imagen a la izquierda del contenedor */
     width: 100%;
-    /* Asegúrate de que la imagen cubra todo el ancho del contenedor */
     height: auto;
     width: 100%;
     height: 100%;
@@ -168,11 +174,8 @@ div h3#iban {
 
 .image-container img {
     display: block;
-    /* Asegura que no haya espacio extra debajo de la imagen */
     width: 100%;
-    /* Ajusta al contenedor */
     height: auto;
-    /* Mantiene la proporción */
 }
 
 .image-container::before {
@@ -183,9 +186,7 @@ div h3#iban {
     right: 0;
     bottom: 0;
     opacity: 0.5;
-    /* Ajusta esto según la transparencia deseada */
     transition: opacity 2s ease-in-out;
-    /* Transición suave para la opacidad */
 }
 
 .info-content {
@@ -206,27 +207,108 @@ div h3#iban {
 }
 
 .morning {
-    background-image: linear-gradient(to top, #80EDEB 0%, #FFFFF1 100%);
+    position: relative;
+    width: 100%;
+    background-image: linear-gradient(to top right, #80EDEB 0%, #FFFFF1 100%);
+    z-index: 1;
+}
+
+.morning:before {
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to top right, #A1D6E6 0%, #F9FFEA 100%);
+    z-index: -1;
+    transition: opacity 0.5s linear;
+    opacity: 0;
 }
 
 .afternoon {
-    background-image: linear-gradient(to top, #7dbcda 0%, #b4afa3 100%);
+    position: relative;
+    width: 100%;
+    background-image: linear-gradient(to top right, #A1D6E6 0%, #F9FFEA 100%);
+    z-index: 1;
+}
+
+.afternoon:before {
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to top right, #ffa600 0%, #c0b7a5 100%);
+    z-index: -1;
+    transition: opacity 0.5s linear;
+    opacity: 0;
 }
 
 .evening {
-    background-image: linear-gradient(to top, #FFD800 0%, #c0b7a5 100%);
+    position: relative;
+    width: 100%;
+    background-image: linear-gradient(to top right, #ffa600 0%, #c0b7a5 100%);
+    z-index: 1;
+}
+
+.evening:before {
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to top right, #7dbcda 0%, #9b968b 100%);
+    z-index: -1;
+    transition: opacity 0.5s linear;
+    opacity: 0;
 }
 
 .night {
-    background-image: linear-gradient(to top, #3d3d3f 0%, #483375 100%);
+    position: relative;
+    width: 100%;
+    background-image: linear-gradient(to top right, #7dbcda 0%, #9b968b 100%);
+    z-index: 1;
+}
+
+.night:before {
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to top right, #80EDEB 0%, #FFFFF1 100%);
+    z-index: -1;
+    transition: opacity 0.5s linear;
+    opacity: 0;
+}
+
+.morning.active::before, .afternoon.active::before, .evening.active::before, .night.active::before {
+    opacity: 1;
+}
+
+.background-section img, #scrollContainer ul {
+    transition: opacity 1s ease-in-out; 
+    opacity: 0; 
+}
+
+.background-section img[style*="opacity: 1"], #scrollContainer ul[style*="opacity: 1"] {
+    opacity: 1;
+}
+
+.image-container {
+    transition: background 1s ease-in-out; 
 }
 
 .flex-container {
-    position: fixed;  /* Fija la posición del contenedor en la pantalla */
-    bottom: 8%;         /* Centra verticalmente */
-    left: 50%;        /* Centra horizontalmente */
-    transform: translate(-50%, -50%); /* Ajusta la posición precisa del centro */
-    z-index: 1000;    /* Asegura que el botón esté por encima de otros contenidos */
+    position: fixed;  
+    bottom: 8%;         
+    left: 50%;       
+    transform: translate(-50%, -50%); 
+    z-index: 1000;   
 }
 
 #float-button {
@@ -246,15 +328,12 @@ div h3#iban {
 
 [data-tf-live] {
     width: 60%;
-    /* Ajusta la anchura del formulario */
     min-width: 300px;
     height: 700px;
-    /* Ajusta la altura según tus necesidades */
 }
 
 #typeform-container {
     background-color: rgba(0, 0, 0, 0.5);
-    /* Negro semi-transparente */
 }
 
 .hMEawv *,
@@ -315,6 +394,23 @@ div h3#iban {
         margin: 24px 0;
     }
 
+    
+}
+
+@media only screen and (min-device-width : 393px) and (max-device-width : 500px) and (orientation : portrait) {
+    #sky_morning {
+        min-width: calc(100vw* 1.5);
+        max-width: calc(100vw* 0.9);
+        top: 10%;
+    }
+}
+
+@media only screen and (min-device-width : 500px) and (max-device-width : 620px) and (orientation : portrait) {
+    #sky_morning {
+        min-width: calc(100vw* 1);
+        max-width: calc(100vw* 0.9);
+        top: 10%;
+    }
 }
 
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
