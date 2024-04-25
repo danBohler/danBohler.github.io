@@ -229,7 +229,7 @@ div h3#iban {
 .afternoon {
     position: relative;
     width: 100%;
-    background-image: linear-gradient(to top right, #A1D6E6 0%, #F9FFEA 100%);
+    background-image: linear-gradient(to top right, #80EDEB 0%, #FFFFF1 100%);
     z-index: 1;
 }
 
@@ -249,7 +249,7 @@ div h3#iban {
 .evening {
     position: relative;
     width: 100%;
-    background-image: linear-gradient(to top right, #ffa600 0%, #c0b7a5 100%);
+    background-image: linear-gradient(to top right, #A1D6E6 0%, #F9FFEA 100%);
     z-index: 1;
 }
 
@@ -269,7 +269,7 @@ div h3#iban {
 .night {
     position: relative;
     width: 100%;
-    background-image: linear-gradient(to top right, #7dbcda 0%, #9b968b 100%);
+    background-image: linear-gradient(to top right, #ffa600 0%, #c0b7a5 100%);
     z-index: 1;
 }
 

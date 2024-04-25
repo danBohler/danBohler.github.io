@@ -79,37 +79,32 @@ document.addEventListener("DOMContentLoaded", function () {
     // Función para cambiar el fondo gradiente en función de la sección
     function changeBackgroundGradient(section) {
         var backgroundContainer = document.querySelector(".image-container");
-        backgroundContainer.classList.remove("morning", "afternoon", "evening", "night");
-        var element;
-        switch (section) {
-            case 0:
-                backgroundContainer.classList.add("morning");
-                element = document.querySelector('.morning');
-                break;
-            case 1:
-                backgroundContainer.classList.add("afternoon");
-                element = document.querySelector('.afternoon');
-                break;
-            case 2:
-                backgroundContainer.classList.add("evening");
-                element = document.querySelector('.evening');
-                break;
-            case 3:
-                backgroundContainer.classList.add("night");
-                element = document.querySelector('.night');
-                break;
-            default:
-                backgroundContainer.classList.add("morning");
-                element = document.querySelector('.morning');
-                break;
-        }
-        // var opacity = window.getComputedStyle(element, '::before').getPropertyValue('opacity');
-        // element.style.opacity = opacity == '0' ? '1' : '0';
-
-        // Agrega clase 'active' para hacer visible el ::before
+        // Asegurarse de quitar la clase 'active' para resetear la opacidad antes de cambiar de sección
+        backgroundContainer.classList.remove("active");
+    
+        // Retrasar la adición de la clase para la nueva sección para permitir que se "limpie" el estado anterior
         setTimeout(() => {
+            backgroundContainer.classList.remove("morning", "afternoon", "evening", "night");
+            switch (section) {
+                case 0:
+                    backgroundContainer.classList.add("morning");
+                    break;
+                case 1:
+                    backgroundContainer.classList.add("afternoon");
+                    break;
+                case 2:
+                    backgroundContainer.classList.add("evening");
+                    break;
+                case 3:
+                    backgroundContainer.classList.add("night");
+                    break;
+                default:
+                    backgroundContainer.classList.add("morning");
+                    break;
+            }
+            // Ahora añadir la clase 'active' para comenzar la transición
             backgroundContainer.classList.add("active");
-        }, 50); // Pequeño delay para asegurar que la transición se ejecuta tras cambiar de estado
-        showImage(section);
+            showImage(section);
+        }, 200);
     }
 });
