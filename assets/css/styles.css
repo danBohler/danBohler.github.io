@@ -3,7 +3,7 @@
     display: none;
 }
 
-/* ESTILOS DE LA WEB */
+/* ELEMENTOS HTML */
 
 body,
 html {
@@ -46,6 +46,8 @@ ul {
     padding: 0;
 }
 
+/* ESTILOS TEXTO */
+
 .bold {
     font-weight: 500;
 }
@@ -53,12 +55,44 @@ ul {
 .subtitle {
     letter-spacing: 2px;
     line-height: 24px;
-    margin: 8% 0 8% 0;
+    margin: 0px;
 }
 
 .shadow {
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+
+div h3#iban {
+    margin: 16px 0;
+}
+
+#title-header {
+    font-family: "Ibarra Real Nova", serif;
+    font-weight: 600;
+    margin: 0px;
+    letter-spacing: 2px;
+    line-height: 40px;
+}
+
+#invite-text {
+    font-family: "Red Hat Text", serif;
+    font-weight: 400;
+    margin: 0px;
+}
+
+#after-text {
+    font-family: "Red Hat Text", serif;
+    font-weight: 400;
+    margin-top: 0px;
+}
+
+.info-text {
+    font-family: "Red Hat Text", serif;
+    line-height: 24px;
+    margin: 0;
+}
+
+/* IMAGENES */
 
 #sky_morning {
     display: block;
@@ -70,9 +104,6 @@ ul {
 }
 
 .background-section {
-    position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
     z-index: 1;
@@ -82,31 +113,41 @@ ul {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100%;
-    height: auto;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
 }
 
-.background-section img:first-child {
-    opacity: 1;
+/* CONTENEDORES GENERALES */
+
+#scrollContainer {
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    text-align: -webkit-center;
+    margin: 0px;
 }
 
 .list-container {
-    position: relative;
-    width: 100%;
-    /* Ajusta esto según el ancho deseado */
+    margin: 64px 32px;
     height: auto;
-    /* O un valor fijo si prefieres una altura específica */
-    margin: 4% 0 0 0 !important;
     position: relative;
-    z-index: 2;
-    height: calc(100vh - 25%);
-    overflow-y: auto;
-    text-align: -webkit-center;
+}
+
+#first_ul {
+    margin-bottom: 48px;
+}
+
+.location_time {
+    height: 24px;
+    margin: 0px;
+    opacity: 1;
+    position: relative;
+}
+
+.ul_container {
+    position: relative;
+    opacity: 1 !important;
+    margin: 0px;
 }
 
 #info-morning,
@@ -116,29 +157,21 @@ ul {
     /* margin: 8% 0 0 0 !important; */
 }
 
-#title-header {
-    font-family: "Ibarra Real Nova", serif;
-    font-weight: 600;
-    margin: 8% 0 8% 0;
-    letter-spacing: 2px;
-    line-height: 40px;
+
+
+/* SEPARATORS */
+
+.init_separator_vertical {
+    width: 1px;
+    content: '';
+    display: block;
+    height: 16px;
+    background-color: #000000;
 }
 
-#invite-text {
-    font-family: "Red Hat Text", serif;
-    font-weight: 400;
-    margin: 8% 0 8% 0;
-}
-
-#after-text {
-    font-family: "Red Hat Text", serif;
-    font-weight: 400;
-}
-
-.info-text {
-    font-family: "Red Hat Text", serif;
-    line-height: 24px;
-    margin: 0;
+.container_separator_horizontal {
+    height: calc(100vh* 0.1);
+    display: flex;
 }
 
 li span.separator-line {
@@ -150,32 +183,40 @@ li span.separator-line {
     margin: auto;
 }
 
-div span.separator-dot {
+div span.separator_vertical {
     width: 1px;
     content: '';
     display: block;
-    height: 1px;
+    min-height: 16px;
+    height: 7vh;
     background-color: #000000;
-    margin: 10px auto;
 }
+
+.container_separator_vertical {
+    height: 7vh;
+}
+
 
 div span.after-dot {
     display: none;
 }
 
-div h3#iban {
-    margin: 16px 0;
-}
+
+
+/* IMAGE CONTAINER */
 
 .image-container {
-    position: relative;
-    overflow: hidden;
+    width: auto; 
+    max-width: 100%; 
+    overflow: hidden; 
+    transition: background 1s ease-in-out;
 }
 
 .image-container img {
+    z-index: 1;
+    height: 30vh; 
+    width: 100%; 
     display: block;
-    width: 100%;
-    height: auto;
 }
 
 .image-container::before {
@@ -189,22 +230,12 @@ div h3#iban {
     transition: opacity 2s ease-in-out;
 }
 
-.info-content {
-    /* margin: 8% 0 0 0;
-    height: 100px; */
+#landscape_morning {
+    /* display: none; */
+    opacity: 1;
 }
 
-#info_afternoon {
-    margin: 8% 0 0 0;
-}
-
-.info-content>.info-icons {
-    position: relative;
-    height: 24px;
-    width: 24px;
-    margin: 16px 0 10px 0;
-    opacity: 1!important;
-}
+/* GRADIENTS */
 
 .morning {
     position: relative;
@@ -226,129 +257,45 @@ div h3#iban {
     opacity: 0;
 }
 
-.afternoon {
+
+.info-content {
+    height: 80px;
+    padding: 16px 0; 
+}
+
+#info_afternoon {
+    margin: 8% 0 0 0;
+}
+
+.info-content>.info-icons {
     position: relative;
-    width: 100%;
-    background-image: linear-gradient(to top right, #80EDEB 0%, #FFFFF1 100%);
-    z-index: 1;
+    height: 24px;
+    width: 24px;
+    margin: 0 0 4px 0;
+    opacity: 1 !important;
 }
 
-.afternoon:before {
-    position: absolute;
-    content: '';
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-image: linear-gradient(to top right, #A1D6E6 0%, #F9FFEA 100%);
-    z-index: -1;
-    transition: opacity 0.5s linear;
-    opacity: 0;
-}
-
-.evening {
-    position: relative;
-    width: 100%;
-    background-image: linear-gradient(to top right, #A1D6E6 0%, #F9FFEA 100%);
-    z-index: 1;
-}
-
-.evening:before {
-    position: absolute;
-    content: '';
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-image: linear-gradient(to top right, #ffa600 0%, #c0b7a5 100%);
-    z-index: -1;
-    transition: opacity 0.5s linear;
-    opacity: 0;
-}
-
-.night {
-    position: relative;
-    width: 100%;
-    background-image: linear-gradient(to top right, #ffa600 0%, #c0b7a5 100%);
-    z-index: 1;
-}
-
-.night:before {
-    position: absolute;
-    content: '';
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-image: linear-gradient(to top right, #7dbcda 0%, #9b968b 100%);
-    z-index: -1;
-    transition: opacity 0.5s linear;
-    opacity: 0;
-}
-
-.morning.active::before, .afternoon.active::before, .evening.active::before, .night.active::before {
-    opacity: 1;
-}
-
-.background-section img, #scrollContainer ul {
-    transition: opacity 1s ease-in-out; 
-    opacity: 0; 
-}
-
-.background-section img[style*="opacity: 1"], #scrollContainer ul[style*="opacity: 1"] {
-    opacity: 1;
-}
-
-.image-container {
-    transition: background 1s ease-in-out; 
-}
 
 .flex-container {
-    position: fixed;  
-    bottom: 8%;         
-    left: 50%;       
-    transform: translate(-50%, -50%); 
-    z-index: 1000;   
+    position: fixed;
+    bottom: 8%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99999;
 }
 
+/* BUTTON */
+
 #float-button {
-    height: 64px;
-    width: 64px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
 #float-button img {
-   opacity: 1!important;
-}
-
-
-/* ESTILOS PARA EL FORM */
-
-[data-tf-live] {
-    width: 60%;
-    min-width: 300px;
-    height: 700px;
-}
-
-#typeform-container {
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-.hMEawv *,
-.hMEawv ::before,
-.hMEawv ::after {
-    box-sizing: inherit;
-    -webkit-font-smoothing: antialiased;
-}
-
-.hMEawv::after {
-    background: transparent;
-}
-
-#typeform-container {
-    width: 50%;
+    height: 64px;
+    width: 64px;
+    opacity: 1 !important;
 }
 
 
@@ -360,60 +307,17 @@ div h3#iban {
 
 @media only screen and (min-device-width : 393px) and (max-device-width : 620px) and (orientation : portrait) {
 
-    /* Estilos para iPad en vertical */
-    .list-container {
-        margin: 40px 0 0 0 !important;
-    }
+  
 
-    #title-header {
-        margin: 40px 0 40px 0;
-    }
 
-    #invite-text {
-        margin: 40px 0 40px 0;
-    }
-
-    .subtitle {
-        margin: 40px 0 40px 0;
-    }
-
-    .flex-container {
-        bottom: 129px;
-    }
-
-    div span.separator-dot {
-        height: 40px;
-    }
-
-    div span.after-dot {
-        display: block;
-        height: 64px;
-    }
-
-    div h3#iban {
-        margin: 24px 0;
-    }
-
-    
 }
 
 @media only screen and (min-device-width : 393px) and (max-device-width : 500px) and (orientation : portrait) {
-    .flex-container {
-        bottom: 12%;
-    }
-    #sky_morning {
-        min-width: calc(100vw* 1.5);
-        max-width: calc(100vw* 0.9);
-        top: 10%;
-    }
+   
 }
 
 @media only screen and (min-device-width : 500px) and (max-device-width : 620px) and (orientation : portrait) {
-    #sky_morning {
-        min-width: calc(100vw* 1);
-        max-width: calc(100vw* 0.9);
-        top: 10%;
-    }
+    
 }
 
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
@@ -423,7 +327,5 @@ div h3#iban {
 @media only screen and (max-width: 620x) {
 
     /* Estilos para móviles */
-    .flex-container {
-        bottom: 60px;
-    }
+   
 }

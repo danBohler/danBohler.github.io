@@ -10,28 +10,24 @@ function updateImageSources() {
     if (width >= 1000) {
         // Desktop
         morning.src = '/assets/images/desktop_landscape_morning.png';
-        afternoon.src = '/assets/images/desktop_landscape_afternoon.png';
         evening.src = '/assets/images/desktop_landscape_evening.png';
         night.src = '/assets/images/desktop_landscape_night.png';
         console.log("Desktop")
     } else if (width >= 621 && width <= 999 && height > width) {
         // Tablet Portrait
         morning.src = '/assets/images/tablet_landscape_morning.png';
-        afternoon.src = '/assets/images/tablet_landscape_afternoon.png';
         evening.src = '/assets/images/tablet_landscape_evening.png';
         night.src = '/assets/images/tablet_landscape_night.png';
         console.log("Tablet Portrait")
     } else if (width >= 621 && width <= 999) {
         // Tablet Landscape
         morning.src = '/assets/images/desktop_landscape_morning.png';
-        afternoon.src = '/assets/images/desktop_landscape_afternoon.png';
         evening.src = '/assets/images/desktop_landscape_evening.png';
         night.src = '/assets/images/desktop_landscape_night.png';
         console.log("Tablet Landscape")
     } else if (width < 620) {
         // Mobile
         morning.src = '/assets/images/mobile_landscape_morning.png';
-        afternoon.src = '/assets/images/mobile_landscape_afternoon.png';
         evening.src = '/assets/images/mobile_landscape_evening.png';
         night.src = '/assets/images/mobile_landscape_night.png';
         console.log("Mobile")
@@ -40,8 +36,8 @@ function updateImageSources() {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    var myScreenOrientation = window.screen.orientation;
-    myScreenOrientation.lock("portrait");
+    // var myScreenOrientation = window.screen.orientation;
+    // myScreenOrientation.lock("portrait");
 
     const floatButton = document.getElementById('float-button');
     const uls = document.querySelectorAll('#scrollContainer ul'); // Selecciona todos los ul dentro del contenedor
@@ -78,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Función para cambiar el fondo gradiente en función de la sección
     function changeBackgroundGradient(section) {
-        var backgroundContainer = document.querySelector(".image-container");
+        var backgroundContainer = document.querySelector(".background-section");
         // Asegurarse de quitar la clase 'active' para resetear la opacidad antes de cambiar de sección
         backgroundContainer.classList.remove("active");
     
@@ -90,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     backgroundContainer.classList.add("morning");
                     break;
                 case 1:
-                    backgroundContainer.classList.add("afternoon");
+                    backgroundContainer.classList.add("morning");
                     break;
                 case 2:
                     backgroundContainer.classList.add("evening");
