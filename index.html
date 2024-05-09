@@ -10,13 +10,22 @@
         <link
             href="https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:ital,wght@0,400..700;1,400..700&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap"
             rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
         <script src="/assets/js/script.js"></script>
         <script>
             window.onload = function () {
-                var link = document.createElement('link');
-                link.rel = 'stylesheet';
-                link.href = '/assets/css/styles.css?v=' + new Date().getTime();
-                document.getElementsByTagName('head')[0].appendChild(link);
+                // Importación del archivo CSS styles.css
+                var link1 = document.createElement('link');
+                link1.rel = 'stylesheet';
+                link1.href = '/assets/css/styles.css?v=' + new Date().getTime();
+                document.getElementsByTagName('head')[0].appendChild(link1);
+
+                // Importación del archivo CSS responsive.css
+                var link2 = document.createElement('link');
+                link2.rel = 'stylesheet';
+                link2.href = '/assets/css/responsive.css?v=' + new Date().getTime();
+                document.getElementsByTagName('head')[0].appendChild(link2);
 
                 // // Inicializar al cargar la página
                 // updateImageSources();
@@ -30,27 +39,24 @@
     <body>
         <div class="background-section morning" id="fixed">
             <!-- imágenes de cielo -->
-            <img id="sky_morning" src="assets/images/mobile_sky_morning.png" alt="Nubes y pájaros de fondo"
-                style="opacity: 0;">
+            <div class="sky-container">
+                <img id="sky_image" src="assets/images/mobile_sky_morning.png" alt="Nubes y pájaros de fondo"
+                    style="opacity: 1;">
+            </div>
             <!-- botón de desplazamiento -->
-            <div id="flex-container" class="flex-container">
-                <!-- <button id="float-button" style="background: none; border: none; padding: 0; outline: none;">
+            <div class="flex-container">
+                <button id="float-button">
                     <img src="/assets/icons/scroll-button.png" alt="Icono del botón">
-                </button> -->
+                </button>
             </div>
             <!-- imágenes de background -->
             <div class="image-container">
-                <img id="landscape_morning" src="/assets/images/mobile_landscape_morning.png"
-                    alt="Imagen de paisaje por la mañana">
+                <img id="landscape_image" class="bgimage" src="/assets/images/mobile_landscape_morning.png"
+                    alt="Imagen de paisaje por la mañana" style="opacity: 1;">
             </div>
-            <!-- <img id="landscape_afternoon" class="bgimage" src="/assets/images/mobile_landscape_afternoon.png"
-                alt="Imagen de paisaje al mediodía" style="opacity: 0;">
-            <img id="landscape_evening" class="bgimage" src="/assets/images/mobile_landscape_evening.png"
-                alt="Imagen de paisaje por la tarde" style="opacity: 0;">
-            <img id="landscape_night" class="bgimage" src="/assets/images/mobile_landscape_night.png"
-                alt="Imagen de paisaje por la noche" style="opacity: 0;"> -->
-            <div id="scrollContainer" class="list-container">
-                <div class="list-container">
+
+            <div id="scrollContainer">
+                <div id="list-container">
                     <ul id="first_ul" class="ul_container">
                         <li class="location_time">
                             <h3 class="subtitle bold">24 / AGOSTO / 24</h3>
@@ -78,7 +84,7 @@
                             <h3 class="subtitle bold">TORAZO / ASTURIAS</h3>
                         </li>
                     </ul>
-                    <ul class="ul_container">
+                    <ul id="second_ul" class="ul_container">
                         <li>
                             <div class="info-content">
                                 <img class="info-icons" src="/assets/icons/directions_bus.png"
