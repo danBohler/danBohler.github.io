@@ -55,6 +55,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const floatButton = document.getElementById('float-button');
     const uls = document.querySelectorAll('#scrollContainer ul');
+    const img = document.getElementById('button-image');
+
     let currentIndex = 0;
 
     floatButton.addEventListener('click', function () {
@@ -112,21 +114,112 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Función para mostrar la imagen correspondiente a la sección actual
     function changeContent(section) {
+        removeNightStyles();
         const listContainer = document.getElementById("list-container");
         // Calcular la altura de cada sección dividiendo la altura del contenedor entre 4
         const sectionHeight = listContainer.scrollHeight / 4;
-        // Función para desplazar el scroll a una posición específica de acuerdo a la sección
-        function scrollToSection(sectionIndex) {
-            // Calcular la posición de desplazamiento multiplicando la altura de la sección por el índice
-            const scrollTo = sectionHeight * sectionIndex;
-            
-            // Desplazar el scroll hasta la posición calculada
-            listContainer.scrollTop = scrollTo;
-        }
         // Ejemplo de cómo usar la función para desplazar al usuario a la segunda sección
-        
-        $("#scrollContainer").animate({
-            scrollTop: sectionHeight * section
-        }, 'slow');
+        const scroll = sectionHeight * section;
+        const space = 16;
+        switch (section) {
+            case 0:
+                $("#scrollContainer").animate({
+                    scrollTop: scroll - space
+                }, 'slow');
+                break;
+            case 1:
+                $("#scrollContainer").animate({
+                    scrollTop: scroll - space
+                }, 'slow');
+                break;
+            case 2:
+                $("#scrollContainer").animate({
+                    scrollTop: scroll - space
+                }, 'slow');
+                break;
+            case 3:
+                addNightStyles();
+                img.src = '/assets/buttons/up-scroll-button-rest.png';
+                $("#scrollContainer").animate({
+                    scrollTop: scroll - space
+                }, 'slow');
+                break;
+        }
     }
+
+    function addNightStyles() {
+        // Seleccionar los elementos
+        const h3Elements = document.querySelectorAll('li h3');
+        const h1Elements = document.querySelectorAll('li h1');
+        const spanElements = document.querySelectorAll('li span');
+        const iconElements = document.querySelectorAll('li div img');
+        h1Elements.forEach(h1 => {
+            h1.classList.add('text-night');
+        })
+        h3Elements.forEach(h3 => {
+            h3.classList.add('text-night');
+        });
+        spanElements.forEach(span => {
+            span.classList.add('line-night');
+        });
+        iconElements.forEach(icon => {
+            icon.classList.add('icon-night');
+        });
+    }
+
+    function removeNightStyles() {
+        // Seleccionar los elementos li
+        const h3Elements = document.querySelectorAll('li h3');
+        const h1Elements = document.querySelectorAll('li h1');
+        const spanElements = document.querySelectorAll('li span');
+        const iconElements = document.querySelectorAll('li div img');
+        h1Elements.forEach(h1 => {
+            h1.classList.remove('text-night');
+        })
+        h3Elements.forEach(h3 => {
+            h3.classList.remove('text-night');
+        });
+        spanElements.forEach(span => {
+            span.classList.remove('line-night');
+        });
+        iconElements.forEach(icon => {
+            icon.classList.remove('icon-night');
+        });
+    }
+
+    // Función para cambiar la imagen cuando se inicia la pulsación
+    function startPress() {
+        if (currentIndex !== 3) {
+            img.src = '/assets/buttons/down-scroll-button-press.png';
+        } else {
+            img.src = '/assets/buttons/up-scroll-button-press.png';
+        }
+    }
+
+    // Función para restaurar la imagen cuando se levanta el botón
+    function endPress() {
+        img.src = '/assets/buttons/down-scroll-button-rest.png';
+    }
+
+    // Agregar event listeners para eventos de ratón
+    floatButton.addEventListener('mousedown', startPress);
+    floatButton.addEventListener('mouseup', endPress);
+
+    // Agregar event listeners para eventos de tacto
+    floatButton.addEventListener('touchstart', startPress);
+    floatButton.addEventListener('touchend', endPress);
+
+    // Función para cambiar la opacidad cuando el cursor está sobre el botón
+    function handleHover() {
+        $('#float-button').css('opacity', '0.8');
+    }
+
+    // Función para restaurar la opacidad cuando el cursor sale del botón
+    function handleHoverEnd() {
+        $('#float-button').css('opacity', '0.56');
+    }
+
+    // Agregar event listeners para eventos de ratón
+    $('#float-button').on('mouseenter', handleHover);
+    $('#float-button').on('mouseleave', handleHoverEnd);
 });

@@ -92,8 +92,19 @@ div h3#iban {
     margin: 0;
 }
 
+
+/* ESTILOS NOCTURNOS */
+
+.line-night {
+    background-color: #F6FAFF !important;
+}
+
 .text-night {
-    color: white;
+    color: #F6FAFF;
+}
+
+img.icon-night {
+    filter: invert(95%);
 }
 
 /* IMAGENES */
@@ -120,7 +131,7 @@ div h3#iban {
     position: absolute;
     bottom: 0;
     left: 0;
-    opacity: 0;
+    opacity: 1;
     transition: opacity 0.5s ease-in-out;
 }
 
@@ -141,7 +152,7 @@ div h3#iban {
 }
 
 #first_ul {
-    margin-bottom: 102px;
+    margin-bottom: 4dvh;
 }
 
 .location_time {
@@ -157,13 +168,9 @@ div h3#iban {
     margin: 0px;
 }
 
-#info-morning,
-#info_afternoon,
-#evening,
-#info_night {
-    /* margin: 8% 0 0 0 !important; */
+#fourth_ul {
+    height: 85dvh;
 }
-
 
 
 /* SEPARATORS */
@@ -195,12 +202,12 @@ div span.separator_vertical {
     content: '';
     display: block;
     min-height: 16px;
-    height: 7dvh;
     background-color: #000000;
 }
 
+div span.separator_vertical,
 .container_separator_vertical {
-    height: 7dvh;
+    height: 5dvh;
 }
 
 
@@ -344,24 +351,6 @@ div span.after-dot {
     opacity: 0;
 }
 
-.morning.active::before,
-.afternoon.active::before,
-.evening.active::before,
-.night.active::before {
-    opacity: 1;
-}
-
-.background-section img,
-#scrollContainer ul {
-    transition: opacity 1s ease-in-out;
-    opacity: 0;
-}
-
-.background-section img[style*="opacity: 1"],
-#scrollContainer ul[style*="opacity: 1"] {
-    opacity: 1;
-}
-
 .image-container {
     transition: background 1s ease-in-out;
 }
@@ -399,17 +388,38 @@ div span.after-dot {
 /* BUTTON */
 
 #float-button {
-    background: none;
-    border: none;
+    background: unset !important;
+    border: unset !important;
+    outline: unset !important;
     padding: 0;
-    outline: none;
-    border-radius: 5px;
     cursor: pointer;
+    opacity: 0.56 !important;
+    transition: background-image 0.3s ease, opacity 0.3s ease;
+}
+
+#float-button:active {
+    background: unset !important;
+    border: unset !important;
+    outline: unset !important;
+    opacity: 0.8 !important;
+}
+
+#float-button:hover {
+    background: unset !important;
+    border: unset !important;
+    outline: unset !important;    opacity: 0.8 !important;
 }
 
 #float-button img {
+    background: unset !important;
+    border: unset !important;
+    outline: unset !important;
     position: relative;
     height: 64px;
     width: 64px;
-    opacity: 1 !important;
+    transition: background-image 0.3s ease;
+    /* Transición suave para el cambio de imagen */
+    border-radius: 50%;
+    /* Hace que el botón sea redondo */
+    background-color: transparent;
 }
