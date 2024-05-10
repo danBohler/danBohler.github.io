@@ -124,8 +124,9 @@ document.addEventListener("DOMContentLoaded", function () {
             listContainer.scrollTop = scrollTo;
         }
         // Ejemplo de cómo usar la función para desplazar al usuario a la segunda sección
-        scrollToSection(section);
-        $("#list-container").animate({
+        // scrollToSection(section);
+        debugger
+        $("html,body").animate({
             scrollTop: $("#second_ul").offset().top},
             'slow');
     }
