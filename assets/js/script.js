@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
         uls[currentIndex].style.opacity = 1;
         changeBackgroundGradient(currentIndex);
         changeBackgroundImage(currentIndex);
-        changeContent(currentIndex)
+        changeContent(currentIndex);
     });
 
     // Función para cambiar el fondo gradiente y la imagen correspondiente a la sección
@@ -124,10 +124,9 @@ document.addEventListener("DOMContentLoaded", function () {
             listContainer.scrollTop = scrollTo;
         }
         // Ejemplo de cómo usar la función para desplazar al usuario a la segunda sección
-        // scrollToSection(section);
-        debugger
-        $("html,body").animate({
-            scrollTop: $("#second_ul").offset().top},
-            'slow');
+        
+        $("#scrollContainer").animate({
+            scrollTop: sectionHeight * section
+        }, 'slow');
     }
 });

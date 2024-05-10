@@ -9,7 +9,7 @@
     }
     div span.separator_vertical,
     .container_separator_vertical {
-        height: 8dvh;
+        height: 10dvh;
     }
 }
 
@@ -19,7 +19,7 @@
     }
     div span.separator_vertical,
     .container_separator_vertical {
-        height: 10dvh;
+        height: 12dvh;
     }
 }
 
@@ -29,7 +29,7 @@
     }
     div span.separator_vertical,
     .container_separator_vertical {
-        height: 12dvh;
+        height: 14dvh;
     }
 }
 
@@ -39,7 +39,7 @@
     }
     div span.separator_vertical,
     .container_separator_vertical {
-        height: 14dvh;
+        height: 16dvh;
     }
 }
 
@@ -49,7 +49,7 @@
     }
     div span.separator_vertical,
     .container_separator_vertical {
-        height: 16dvh;
+        height: 18dvh;
     }
 }
 
