@@ -388,32 +388,34 @@ div span.after-dot {
 /* BUTTON */
 
 #float-button {
-    background: unset !important;
-    border: unset !important;
-    outline: unset !important;
+    -webkit-tap-highlight-color: transparent; /* for removing the highlight */
+    background: none !important;
+    border: none !important;
+    outline: none !important;
     padding: 0;
     cursor: pointer;
     opacity: 0.56 !important;
+    /* Opacidad predeterminada */
     transition: background-image 0.3s ease, opacity 0.3s ease;
 }
 
 #float-button:active {
-    background: unset !important;
-    border: unset !important;
-    outline: unset !important;
     opacity: 0.8 !important;
+    /* Opacidad al estar activo */
 }
 
-#float-button:hover {
-    background: unset !important;
-    border: unset !important;
-    outline: unset !important;    opacity: 0.8 !important;
+#float-button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+
+#float-button:not(:hover):not(:active) {
+    opacity: 0.56 !important;
+    /* Opacidad predeterminada cuando no está en :hover ni :active */
 }
 
 #float-button img {
-    background: unset !important;
-    border: unset !important;
-    outline: unset !important;
     position: relative;
     height: 64px;
     width: 64px;

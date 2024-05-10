@@ -187,39 +187,25 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Función para cambiar la imagen cuando se inicia la pulsación
-    function startPress() {
-        if (currentIndex !== 3) {
-            img.src = '/assets/buttons/down-scroll-button-press.png';
-        } else {
-            img.src = '/assets/buttons/up-scroll-button-press.png';
-        }
-    }
+    // // Función para cambiar la imagen cuando se inicia la pulsación
+    // function startPress() {
+    //     if (currentIndex !== 3) {
+    //         img.src = '/assets/buttons/down-scroll-button-press.png';
+    //     } else {
+    //         img.src = '/assets/buttons/up-scroll-button-press.png';
+    //     }
+    // }
 
-    // Función para restaurar la imagen cuando se levanta el botón
-    function endPress() {
-        img.src = '/assets/buttons/down-scroll-button-rest.png';
-    }
+    // // Función para restaurar la imagen cuando se levanta el botón
+    // function endPress() {
+    //     img.src = '/assets/buttons/down-scroll-button-rest.png';
+    // }
 
-    // Agregar event listeners para eventos de ratón
-    floatButton.addEventListener('mousedown', startPress);
-    floatButton.addEventListener('mouseup', endPress);
+    // // Agregar event listeners para eventos de ratón
+    // floatButton.addEventListener('mousedown', startPress);
+    // floatButton.addEventListener('mouseup', endPress);
 
-    // Agregar event listeners para eventos de tacto
-    floatButton.addEventListener('touchstart', startPress);
-    floatButton.addEventListener('touchend', endPress);
-
-    // Función para cambiar la opacidad cuando el cursor está sobre el botón
-    function handleHover() {
-        $('#float-button').css('opacity', '0.8');
-    }
-
-    // Función para restaurar la opacidad cuando el cursor sale del botón
-    function handleHoverEnd() {
-        $('#float-button').css('opacity', '0.56');
-    }
-
-    // Agregar event listeners para eventos de ratón
-    $('#float-button').on('mouseenter', handleHover);
-    $('#float-button').on('mouseleave', handleHoverEnd);
+    // // Agregar event listeners para eventos de tacto
+    // floatButton.addEventListener('touchstart', startPress);
+    // floatButton.addEventListener('touchend', endPress);
 });
