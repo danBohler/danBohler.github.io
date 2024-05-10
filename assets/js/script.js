@@ -114,6 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Función para mostrar la imagen correspondiente a la sección actual
     function changeContent(section) {
+        img.src = '/assets/buttons/down-scroll-button-rest.png';
         removeNightStyles();
         const listContainer = document.getElementById("list-container");
         // Calcular la altura de cada sección dividiendo la altura del contenedor entre 4
@@ -187,25 +188,25 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // // Función para cambiar la imagen cuando se inicia la pulsación
-    // function startPress() {
-    //     if (currentIndex !== 3) {
-    //         img.src = '/assets/buttons/down-scroll-button-press.png';
-    //     } else {
-    //         img.src = '/assets/buttons/up-scroll-button-press.png';
-    //     }
-    // }
+    // Función para cambiar la imagen cuando se inicia la pulsación
+    function startPress() {
+        if (currentIndex !== 3) {
+            img.src = '/assets/buttons/down-scroll-button-press.png';
+        } else {
+            img.src = '/assets/buttons/up-scroll-button-press.png';
+        }
+    }
 
-    // // Función para restaurar la imagen cuando se levanta el botón
-    // function endPress() {
-    //     img.src = '/assets/buttons/down-scroll-button-rest.png';
-    // }
+    // Función para restaurar la imagen cuando se levanta el botón
+    function endPress() {
+        img.src = '/assets/buttons/down-scroll-button-rest.png';
+    }
 
-    // // Agregar event listeners para eventos de ratón
-    // floatButton.addEventListener('mousedown', startPress);
-    // floatButton.addEventListener('mouseup', endPress);
+    // Agregar event listeners para eventos de ratón
+    floatButton.addEventListener('mousedown', startPress);
+    floatButton.addEventListener('mouseup', endPress);
 
-    // // Agregar event listeners para eventos de tacto
-    // floatButton.addEventListener('touchstart', startPress);
-    // floatButton.addEventListener('touchend', endPress);
+    // Agregar event listeners para eventos de tacto
+    floatButton.addEventListener('touchstart', startPress);
+    floatButton.addEventListener('touchend', endPress);
 });
