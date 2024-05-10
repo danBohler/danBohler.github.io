@@ -5,51 +5,51 @@
 
 @media only screen and (min-device-height: 720px) and (max-device-height : 832px) and (orientation : portrait){
     .container_separator_horizontal {
-        height: calc(100vh* 0.13);
+        height: calc(100vh* 0.12);
     }
     div span.separator_vertical,
     .container_separator_vertical {
-        height: 9vh;
+        height: 8vh;
     }
 }
 
 @media only screen and (min-device-height: 832px) and (max-device-height : 952px) and (orientation : portrait){
     .container_separator_horizontal {
-        height: calc(100vh* 0.14);
+        height: calc(100vh* 0.13);
     }
     div span.separator_vertical,
     .container_separator_vertical {
-        height: 11vh;
+        height: 10vh;
     }
 }
 
 @media only screen and (min-device-height: 952px) and (max-device-height : 1042px) and (orientation : portrait){
     .container_separator_horizontal {
-        height: calc(100vh* 0.15);
+        height: calc(100vh* 0.14);
     }
     div span.separator_vertical,
     .container_separator_vertical {
-        height: 13vh;
+        height: 12vh;
     }
 }
 
 @media only screen and (min-device-height: 1042px) and (max-device-height : 1150px) and (orientation : portrait){
     .container_separator_horizontal {
-        height: calc(100vh* 0.16);
+        height: calc(100vh* 0.15);
     }
     div span.separator_vertical,
     .container_separator_vertical {
-        height: 15vh;
+        height: 14vh;
     }
 }
 
 @media only screen and (min-device-height: 1150px) and (orientation : portrait){
     .container_separator_horizontal {
-        height: calc(100vh* 0.17);
+        height: calc(100vh* 0.16);
     }
     div span.separator_vertical,
     .container_separator_vertical {
-        height: 17vh;
+        height: 16vh;
     }
 }
 
