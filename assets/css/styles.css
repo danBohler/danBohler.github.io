@@ -226,10 +226,10 @@ div span.separator_vertical,
     height: 4dvh;
 }
 
-div span.separator_vertical.last,
+/* div span.separator_vertical.last,
 .container_separator_vertical.last {
     height: 10dvh;
-}
+} */
 
 
 div span.after-dot {
