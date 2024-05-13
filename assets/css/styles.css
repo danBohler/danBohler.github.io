@@ -214,6 +214,13 @@ div span.after-dot {
     display: none;
 }
 
+/* PANTALLA MÓVIL */
+
+.deviceVH {
+    position: absolute;
+    right: 0;
+    z-index: 999999;
+}
 
 
 /* IMAGE CONTAINER */
