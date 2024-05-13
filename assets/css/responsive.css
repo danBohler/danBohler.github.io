@@ -5,7 +5,7 @@
 
 @media only screen and (min-device-height: 720px) and (max-device-height : 832px) and (orientation : portrait){
     .container_separator_horizontal {
-        height: calc(100dvh* 0.12);
+        height: 12dvh;
     }
     div span.separator_vertical,
     .container_separator_vertical {
@@ -18,7 +18,7 @@
         margin-bottom: 14dvh;
     }
     .container_separator_horizontal {
-        height: calc(100dvh* 0.13);
+        height: 13dvh;
     }
     div span.separator_vertical,
     .container_separator_vertical {
@@ -28,7 +28,7 @@
 
 @media only screen and (min-device-height: 952px) and (max-device-height : 1042px) and (orientation : portrait){
     .container_separator_horizontal {
-        height: calc(100dvh* 0.14);
+        height: 14dvh;
     }
     div span.separator_vertical,
     .container_separator_vertical {
@@ -38,7 +38,7 @@
 
 @media only screen and (min-device-height: 1042px) and (max-device-height : 1150px) and (orientation : portrait){
     .container_separator_horizontal {
-        height: calc(100dvh* 0.15);
+        height: 15dvh;
     }
     div span.separator_vertical,
     .container_separator_vertical {
@@ -48,7 +48,7 @@
 
 @media only screen and (min-device-height: 1150px) and (orientation : portrait){
     .container_separator_horizontal {
-        height: calc(100dvh* 0.16);
+        height: 16dvh;
     }
     div span.separator_vertical,
     .container_separator_vertical {
@@ -76,12 +76,8 @@
     
 }
 
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
-    /* Estilos para iPad en horizontal */
-}
-
-@media only screen and (max-width: 620x) {
-
-    /* Estilos para móviles */
-   
+@media only screen and (orientation : landscape) {
+    body, html {
+        display: none;
+    }
 }

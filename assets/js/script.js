@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Función para mostrar la imagen correspondiente a la sección actual
     function changeContent(section) {
-        img.src = '/assets/buttons/down-scroll-button-rest.png';
+        img.src = '/assets/buttons/down-scroll-button-rest.svg';
         removeNightStyles();
         const listContainer = document.getElementById("list-container");
         // Calcular la altura de cada sección dividiendo la altura del contenedor entre 4
@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", function () {
         switch (section) {
             case 0:
                 $("#scrollContainer").animate({
-                    scrollTop: scroll - space
+                    scrollTop: scroll
                 }, 'slow');
                 break;
             case 1:
@@ -140,9 +140,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 break;
             case 3:
                 addNightStyles();
-                img.src = '/assets/buttons/up-scroll-button-rest.png';
+                img.src = '/assets/buttons/up-scroll-button-rest.svg';
                 $("#scrollContainer").animate({
-                    scrollTop: scroll - space
+                    scrollTop: scroll 
                 }, 'slow');
                 break;
         }
@@ -191,15 +191,15 @@ document.addEventListener("DOMContentLoaded", function () {
     // Función para cambiar la imagen cuando se inicia la pulsación
     function startPress() {
         if (currentIndex !== 3) {
-            img.src = '/assets/buttons/down-scroll-button-press.png';
+            img.src = '/assets/buttons/down-scroll-button-press.svg';
         } else {
-            img.src = '/assets/buttons/up-scroll-button-press.png';
+            img.src = '/assets/buttons/up-scroll-button-press.svg';
         }
     }
 
     // Función para restaurar la imagen cuando se levanta el botón
     function endPress() {
-        img.src = '/assets/buttons/down-scroll-button-rest.png';
+        img.src = '/assets/buttons/down-scroll-button-rest.svg';
     }
 
     // Agregar event listeners para eventos de ratón
