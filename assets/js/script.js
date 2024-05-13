@@ -220,5 +220,5 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     // Mostrar los resultados en la consola
     $("#height").html("H:"+Math.floor(screenHeight));
-    $("#width").html("W:"+Math.floor(screenWidth))
+    $("#width").html("W:"+Math.floor(screenWidth));
 });
