@@ -3,7 +3,7 @@
 /* Estilos para móviles */
 /* HEIGHT */
 
-@media only screen and (min-device-height: 540px) and (max-device-height : 580px){
+@media only screen and (min-device-height: 540px) and (max-device-height : 590px){
     #first_ul {
         margin-bottom: 8dvh;
     }
@@ -16,19 +16,22 @@
     }
 }
 
-@media only screen and (min-device-height: 580px) and (max-device-height : 720px){
+@media only screen and (min-device-height: 590px) and (max-device-height : 720px){
     #first_ul {
         margin-bottom: 14dvh;
     }
     .container_separator_horizontal {
-        height: 11dvh;
+        height: 10dvh;
     }
     div span.separator_vertical,
     .container_separator_vertical {
-        height: 10dvh;
+        height:7dvh;
     }
     div span.separator_vertical.last, .container_separator_vertical.last {
         height: 20dvh;
+    }
+    #fourth_ul {
+        height: 75dvh;
     }
 }
 

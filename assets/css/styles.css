@@ -91,6 +91,18 @@ div h3#iban {
     margin: 0;
 }
 
+.deviceVH {
+    position: absolute;
+    top: 0;
+    height: 60px;
+    width: -webkit-fill-available;
+}
+
+.deviceVH p {
+    margin: 4px 32px 0;
+    font-size: 14px;
+}
+
 
 /* ESTILOS NOCTURNOS */
 
