@@ -211,15 +211,14 @@ document.addEventListener("DOMContentLoaded", function () {
     floatButton.addEventListener('touchend', endPress);
 
 
-    // Obtener el ancho y el alto de la pantalla
-    const screenWidth = window.innerWidth;
-    const screenHeight = window.innerHeight;
-
     // Calcular el ancho y el alto en dvh
-    const screenWidthInDvh = (screenWidth / window.screen.height) * 100;
-    const screenHeightInDvh = (screenHeight / window.screen.height) * 100;
-
+    const screenHeight = Math.floor(window.innerHeight);
+    const screenWidth = Math.floor(window.innerWidth);
+    if(screenHeight > 1000) {
+        screenHeight = screenHeight/3
+        screenWidth = screenWidth/3
+    }
     // Mostrar los resultados en la consola
-    $("#height").html("H:"+Math.floor(screenHeight/3));
-    $("#width").html("W:"+Math.floor(screenWidth/3))
+    $("#height").html("H:"+Math.floor(screenHeight));
+    $("#width").html("W:"+Math.floor(screenWidth))
 });
