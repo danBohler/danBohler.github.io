@@ -218,7 +218,6 @@ document.addEventListener("DOMContentLoaded", function () {
         screenHeight = screenHeight/3
         screenWidth = screenWidth/3
     }
-    debugger
     // Mostrar los resultados en la consola
     $("#height").html("H:"+Math.floor(screenHeight));
     $("#width").html("W:"+Math.floor(screenWidth))
