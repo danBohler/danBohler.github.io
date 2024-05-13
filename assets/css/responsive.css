@@ -3,6 +3,39 @@
 /* Estilos para móviles */
 /* HEIGHT */
 
+@media only screen and (min-device-height: 540px) and (max-device-height : 580px) and (orientation : portrait){
+    #first_ul {
+        margin-bottom: 8dvh;
+    }
+    .container_separator_horizontal {
+        height: 10dvh;
+    }
+    div span.separator_vertical,
+    .container_separator_vertical {
+        height: 7dvh;
+    }
+}
+
+@media only screen and (min-device-height: 580px) and (max-device-height : 720px) and (orientation : portrait){
+    #first_ul {
+        margin-bottom: 14dvh;
+    }
+    .container_separator_horizontal {
+        height: 11.5dvh;
+    }
+    div span.separator_vertical,
+    .container_separator_vertical {
+        height: 9dvh;
+    }
+    div span.separator_vertical.last, .container_separator_vertical.last {
+        height: 20dvh;
+    }
+
+    #fourth_ul {
+        height: 75dvh;
+    }
+}
+
 @media only screen and (min-device-height: 720px) and (max-device-height : 832px) and (orientation : portrait){
     .container_separator_horizontal {
         height: 12dvh;
