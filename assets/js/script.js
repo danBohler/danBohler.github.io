@@ -214,7 +214,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Calcular el ancho y el alto en dvh
     let screenHeight = Math.floor(window.innerHeight);
     let screenWidth = Math.floor(window.innerWidth);
-    if(screenHeight > 1000) {
+    if(screenHeight > 1500) {
         screenHeight = screenHeight/3
         screenWidth = screenWidth/3
     }
