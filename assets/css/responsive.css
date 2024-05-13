@@ -21,11 +21,11 @@
         margin-bottom: 14dvh;
     }
     .container_separator_horizontal {
-        height: 11.5dvh;
+        height: 11dvh;
     }
     div span.separator_vertical,
     .container_separator_vertical {
-        height: 9dvh;
+        height: 10dvh;
     }
     div span.separator_vertical.last, .container_separator_vertical.last {
         height: 20dvh;
