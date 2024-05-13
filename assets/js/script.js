@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 addNightStyles();
                 img.src = '/assets/buttons/up-scroll-button-rest.svg';
                 $("#scrollContainer").animate({
-                    scrollTop: scroll
+                    scrollTop: scroll 
                 }, 'slow');
                 break;
         }
@@ -209,16 +209,4 @@ document.addEventListener("DOMContentLoaded", function () {
     // Agregar event listeners para eventos de tacto
     floatButton.addEventListener('touchstart', startPress);
     floatButton.addEventListener('touchend', endPress);
-
-
-    // Calcular el ancho y el alto en dvh
-    let screenHeight = Math.floor(window.innerHeight);
-    let screenWidth = Math.floor(window.innerWidth);
-    if(screenHeight > 1500) {
-        screenHeight = screenHeight/3
-        screenWidth = screenWidth/3
-    }
-    // Mostrar los resultados en la consola
-    $("#height").html("H:"+Math.floor(screenHeight));
-    $("#width").html("W:"+Math.floor(screenWidth));
 });
