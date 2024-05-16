@@ -114,6 +114,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Función para mostrar la imagen correspondiente a la sección actual
     function changeContent(section) {
+        // Calcular el ancho y el alto en svh
+        let screenHeight = Math.floor(window.innerHeight);
+        let screenWidth = Math.floor(window.innerWidth);
+        if (screenHeight > 1500) {
+            screenHeight = screenHeight / 3
+            screenWidth = screenWidth / 3
+        }
+
+        // Mostrar los resultados en la consola
+        // $("#height").html("H:" + Math.floor(screenHeight));
+        // $("#width").html("W:" + Math.floor(screenWidth));
+
         img.src = '/assets/buttons/down-scroll-button-rest.svg';
         removeNightStyles();
         const listContainer = document.getElementById("list-container");
@@ -121,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const sectionHeight = listContainer.scrollHeight / 4;
         // Ejemplo de cómo usar la función para desplazar al usuario a la segunda sección
         const scroll = sectionHeight * section;
-        const space = 16;
+        const space = screenHeight * 0.05;
         switch (section) {
             case 0:
                 $("#scrollContainer").animate({
@@ -142,7 +154,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 addNightStyles();
                 img.src = '/assets/buttons/up-scroll-button-rest.svg';
                 $("#scrollContainer").animate({
-                    scrollTop: scroll 
+                    scrollTop: scroll - (space * 2.5)
                 }, 'slow');
                 break;
         }
@@ -209,15 +221,4 @@ document.addEventListener("DOMContentLoaded", function () {
     // Agregar event listeners para eventos de tacto
     floatButton.addEventListener('touchstart', startPress);
     floatButton.addEventListener('touchend', endPress);
-
-    // Calcular el ancho y el alto en svh
-    let screenHeight = Math.floor(window.innerHeight);
-    let screenWidth = Math.floor(window.innerWidth);
-    if(screenHeight > 1500) {
-        screenHeight = screenHeight/3
-        screenWidth = screenWidth/3
-    }
-    // Mostrar los resultados en la consola
-    $("#height").html("H:"+Math.floor(screenHeight));
-    $("#width").html("W:"+Math.floor(screenWidth));
 });
