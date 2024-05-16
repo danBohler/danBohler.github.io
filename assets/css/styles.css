@@ -201,7 +201,7 @@ div span.separator_vertical {
 
 div span.separator_vertical,
 .container_separator_vertical {
-    height: 7svh;
+    height: 6svh;
 }
 
 div span.separator_vertical.last,
