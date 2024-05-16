@@ -5,23 +5,23 @@
 
 @media only screen and (min-device-height: 720px) and (max-device-height : 832px) and (orientation : portrait){
     .container_separator_horizontal {
-        height: 12dvh;
+        height: 12svh;
     }
     div span.separator_vertical,
     .container_separator_vertical {
-        height: 10dvh;
+        height: 10svh;
     }
 }
 
 @media only screen and (min-device-height: 832px) and (max-device-height : 952px) and (orientation : portrait){
     #first_ul {
-        margin-bottom: 14dvh;
+        margin-bottom: 14svh;
     }
     .container_separator_horizontal {
-        height: 13dvh;
+        height: 13svh;
     }
     div span.separator_vertical,
     .container_separator_vertical {
-        height: 12dvh;
+        height: 12svh;
     }
 }

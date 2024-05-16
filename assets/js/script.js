@@ -210,7 +210,7 @@ document.addEventListener("DOMContentLoaded", function () {
     floatButton.addEventListener('touchstart', startPress);
     floatButton.addEventListener('touchend', endPress);
 
-    // Calcular el ancho y el alto en dvh
+    // Calcular el ancho y el alto en svh
     let screenHeight = Math.floor(window.innerHeight);
     let screenWidth = Math.floor(window.innerWidth);
     if(screenHeight > 1500) {
