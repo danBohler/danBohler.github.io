@@ -116,6 +116,7 @@ img.icon-night {
 }
 
 #sky_image {
+    background-color: aqua;
     height: 90%;
     width: -webkit-fill-available;
     object-fit: cover;
