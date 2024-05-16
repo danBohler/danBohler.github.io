@@ -140,13 +140,13 @@ img.icon-night {
 }
 
 #list-container {
-    margin: 64px 24px;
+    margin: 64px 16px;
     height: auto;
     position: relative;
 }
 
 #first_ul {
-    margin-bottom: 8svh;
+    margin-bottom: 10svh;
 }
 
 .location_time {
@@ -178,7 +178,7 @@ img.icon-night {
 }
 
 .container_separator_horizontal {
-    height: 13svh;
+    height: 9svh;
     display: flex;
 }
 
@@ -201,12 +201,12 @@ div span.separator_vertical {
 
 div span.separator_vertical,
 .container_separator_vertical {
-    height: 10svh;
+    height: 4svh;
 }
 
 div span.separator_vertical.last,
 .container_separator_vertical.last {
-    height: 10svh;
+    height: 8svh;
 }
 
 
@@ -230,6 +230,7 @@ div span.after-dot {
     width: 100%;
     transition: background 1s ease-in-out;
     position: absolute;
+    align-content: flex-start;
     bottom: 0;
     left: 0;
     opacity: 1;
@@ -344,7 +345,7 @@ div span.after-dot {
     position: relative;
     height: 24px;
     width: 24px;
-    margin: 0 0 4px 0;
+    margin: 4px 0;
     opacity: 1 !important;
 }
 

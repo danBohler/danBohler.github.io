@@ -3,6 +3,22 @@
 /* Estilos para móviles */
 /* HEIGHT */
 
+@media (min-height: 600px) {
+    .image-container {
+        align-content: flex-end;
+    }
+  }
+
+@media only screen and (min-device-height: 600px) and (max-device-height : 720px) and (orientation : portrait){
+    .container_separator_horizontal {
+        height: 13svh;
+    }
+    div span.separator_vertical,
+    .container_separator_vertical {
+        height: 10svh;
+    }
+}
+
 @media only screen and (min-device-height: 720px) and (max-device-height : 832px) and (orientation : portrait){
     .container_separator_horizontal {
         height: 12svh;
