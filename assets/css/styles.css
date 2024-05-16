@@ -116,7 +116,6 @@ img.icon-night {
 }
 
 #sky_image {
-    background-color: aqua;
     height: 90%;
     width: -webkit-fill-available;
     object-fit: cover;
@@ -179,7 +178,7 @@ img.icon-night {
 }
 
 .container_separator_horizontal {
-    height: 9svh;
+    height: 9dvh;
     display: flex;
 }
 
@@ -202,12 +201,12 @@ div span.separator_vertical {
 
 div span.separator_vertical,
 .container_separator_vertical {
-    height: 4svh;
+    height: 4dvh;
 }
 
 div span.separator_vertical.last,
 .container_separator_vertical.last {
-    height: 8svh;
+    height: 8dvh;
 }
 
 
