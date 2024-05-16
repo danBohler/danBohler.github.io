@@ -10,7 +10,7 @@
 }
 
 @media only screen and (min-device-height: 645px) and (max-device-height : 720px) and (orientation : portrait) {
-    .container_separator_horizontal {
+    /* .container_separator_horizontal {
         height: 13svh;
     }
 
@@ -22,9 +22,9 @@
     div span.separator_vertical.last,
     .container_separator_vertical.last {
         height: 14svh;
-    }
+    } */
 }
-
+/* 
 @media only screen and (min-device-height: 720px) and (max-device-height : 832px) and (orientation : portrait) {
     .container_separator_horizontal {
         height: 13svh;
@@ -54,4 +54,4 @@
     .container_separator_vertical {
         height: 12svh;
     }
-}
+} */

@@ -60,9 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let currentIndex = 0;
 
     floatButton.addEventListener('click', function () {
-        uls[currentIndex].style.opacity = 0;
         currentIndex = (currentIndex + 1) % uls.length;
-        uls[currentIndex].style.opacity = 1;
         changeBackgroundGradient(currentIndex);
         changeBackgroundImage(currentIndex);
         changeContent(currentIndex);
@@ -114,47 +112,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Función para mostrar la imagen correspondiente a la sección actual
     function changeContent(section) {
-        // Calcular el ancho y el alto en svh
-        let screenHeight = Math.floor(window.innerHeight);
-        let screenWidth = Math.floor(window.innerWidth);
-        if (screenHeight > 1500) {
-            screenHeight = screenHeight / 3
-            screenWidth = screenWidth / 3
-        }
-
-        // Mostrar los resultados en la consola
-        // $("#height").html("H:" + Math.floor(screenHeight));
-        // $("#width").html("W:" + Math.floor(screenWidth));
-
         img.src = '/assets/buttons/down-scroll-button-rest.svg';
         removeNightStyles();
-        const listContainer = document.getElementById("list-container");
-        // Calcular la altura de cada sección dividiendo la altura del contenedor entre 4
-        const sectionHeight = listContainer.scrollHeight / 4;
-        // Ejemplo de cómo usar la función para desplazar al usuario a la segunda sección
-        const scroll = sectionHeight * section;
-        const space = screenHeight * 0.05;
         switch (section) {
             case 0:
                 $("#scrollContainer").animate({
-                    scrollTop: scroll
+                    scrollTop: $("#first_ul").offset().top
                 }, 'slow');
                 break;
             case 1:
                 $("#scrollContainer").animate({
-                    scrollTop: scroll - space
+                    scrollTop: $("#second_ul").offset().top
                 }, 'slow');
                 break;
             case 2:
                 $("#scrollContainer").animate({
-                    scrollTop: scroll - space
+                    scrollTop: $("#scrollContainer").scrollTop() + $("#third_ul").offset().top
                 }, 'slow');
                 break;
             case 3:
                 addNightStyles();
                 img.src = '/assets/buttons/up-scroll-button-rest.svg';
                 $("#scrollContainer").animate({
-                    scrollTop: scroll - (space * 2.5)
+                    scrollTop: $("#scrollContainer").scrollTop() + $("#fourth_ul").offset().top
                 }, 'slow');
                 break;
         }
