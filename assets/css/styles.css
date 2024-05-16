@@ -160,14 +160,17 @@ img.icon-night {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    height: 85svh!important;
+    height: 80svh!important;
     position: relative;
-    opacity: 1 !important;
     margin: 0px;
 }
 
+.li_container {
+    /* height: 100%; */
+}
+
 #fourth_ul {
-    height: 85svh;
+    height: 100svh !important;
 }
 
 
@@ -205,12 +208,12 @@ div span.separator_vertical {
 
 div span.separator_vertical,
 .container_separator_vertical {
-    height: 2svh;
+    /* height: 100%; */
 }
 
 div span.separator_vertical.last,
 .container_separator_vertical.last {
-    height: 10svh;
+    /* height: 100%; */
 }
 
 

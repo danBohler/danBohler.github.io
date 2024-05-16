@@ -112,6 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Función para mostrar la imagen correspondiente a la sección actual
     function changeContent(section) {
+        $(".ul_container").css("justify-content" , "space-evenly");
         img.src = '/assets/buttons/down-scroll-button-rest.svg';
         removeNightStyles();
         switch (section) {
@@ -132,6 +133,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 break;
             case 3:
                 addNightStyles();
+                $(".ul_container").css("justify-content" , "space-between");
                 img.src = '/assets/buttons/up-scroll-button-rest.svg';
                 $("#scrollContainer").animate({
                     scrollTop: $("#scrollContainer").scrollTop() + $("#fourth_ul").offset().top
