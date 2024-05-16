@@ -166,7 +166,12 @@ img.icon-night {
 }
 
 .li_container {
-    /* height: 100%; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    position: relative;
 }
 
 #fourth_ul {
@@ -175,14 +180,6 @@ img.icon-night {
 
 
 /* SEPARATORS */
-
-.init_separator_vertical {
-    width: 1px;
-    content: '';
-    display: block;
-    height: 16px;
-    background-color: #000000;
-}
 
 .container_separator_horizontal {
     height: 7svh;
@@ -198,24 +195,18 @@ li span.separator-line {
     margin: auto;
 }
 
-div span.separator_vertical {
+span.separator_vertical {
     width: 1px;
     content: '';
     display: block;
     min-height: 16px;
     background-color: #000000;
+    flex-grow: 1;
 }
 
-div span.separator_vertical,
-.container_separator_vertical {
-    /* height: 100%; */
+.transparent {
+    background-color: transparent!important;
 }
-
-div span.separator_vertical.last,
-.container_separator_vertical.last {
-    /* height: 100%; */
-}
-
 
 div span.after-dot {
     display: none;
@@ -237,7 +228,7 @@ div span.after-dot {
     width: 100%;
     transition: background 1s ease-in-out;
     position: absolute;
-    bottom: 0;
+    bottom: -3%;
     left: 0;
     opacity: 1;
     z-index: 1;
