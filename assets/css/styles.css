@@ -178,7 +178,7 @@ img.icon-night {
 }
 
 .container_separator_horizontal {
-    height: 9dvh;
+    height: 9svh;
     display: flex;
 }
 
@@ -201,12 +201,12 @@ div span.separator_vertical {
 
 div span.separator_vertical,
 .container_separator_vertical {
-    height: 4dvh;
+    height: 4svh;
 }
 
 div span.separator_vertical.last,
 .container_separator_vertical.last {
-    height: 8dvh;
+    height: 8svh;
 }
 
 
