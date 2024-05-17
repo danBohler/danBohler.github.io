@@ -140,7 +140,7 @@ img.icon-night {
 }
 
 #list-container {
-    margin: 64px 16px;
+    margin: 64px 24px;
     height: auto;
     position: relative;
 }
@@ -224,6 +224,7 @@ div span.after-dot {
 /* IMAGE CONTAINER */
     
 .image-container {
+    /* display: none; */
     height: 30svh;
     width: 100%;
     transition: background 1s ease-in-out;
