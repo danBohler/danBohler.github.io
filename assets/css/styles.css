@@ -182,7 +182,7 @@ img.icon-night {
 /* SEPARATORS */
 
 .container_separator_horizontal {
-    height: 7svh;
+    height: 12svh;
     display: flex;
 }
 
@@ -210,6 +210,10 @@ span.separator_vertical {
 
 div span.after-dot {
     display: none;
+}
+
+#last_separator_line {
+    height: 35svh;
 }
 
 /* PANTALLA MÓVIL */
