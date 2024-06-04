@@ -82,12 +82,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 break;
             case 1:
                 $("#scrollContainer").animate({
-                    scrollTop: $("#second_ul").offset().top
+                    scrollTop: $("#second_ul").offset().top - $("#fixed").offset().top
                 }, 'slow');
                 break;
             case 2:
                 $("#scrollContainer").animate({
-                    scrollTop: $("#scrollContainer").scrollTop() + $("#third_ul").offset().top
+                    scrollTop: $("#scrollContainer").scrollTop() - $("#fixed").offset().top + $("#third_ul").offset().top
                 }, 'slow');
                 break;
             case 3:
@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 $(".ul_container").css("justify-content" , "space-between");
                 img.src = '/assets/buttons/up-scroll-button-rest.svg';
                 $("#scrollContainer").animate({
-                    scrollTop: $("#scrollContainer").scrollTop() + $("#fourth_ul").offset().top
+                    scrollTop: $("#scrollContainer").scrollTop() - $("#fixed").offset().top + $("#fourth_ul").offset().top
                 }, 'slow');
                 break;
         }
