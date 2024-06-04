@@ -119,6 +119,7 @@ img.icon-night {
     height: 90%;
     width: -webkit-fill-available;
     object-fit: cover;
+    transition: opacity 1s ease-in-out;
 }
 
 .background-section {

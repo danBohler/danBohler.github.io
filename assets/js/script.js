@@ -1,44 +1,3 @@
-function updateImageSources() {
-    var width = window.innerWidth;
-    var height = window.innerHeight;
-
-    var morning = document.getElementById('landscape_morning');
-    var afternoon = document.getElementById('landscape_afternoon');
-    var evening = document.getElementById('landscape_evening');
-    var night = document.getElementById('landscape_night');
-
-    if (width >= 1000) {
-        // Desktop
-        morning.src = '/assets/images/desktop_landscape_morning.png';
-        afternoon.src = '/assets/images/desktop_landscape_morning.png';
-        evening.src = '/assets/images/desktop_landscape_evening.png';
-        night.src = '/assets/images/desktop_landscape_night.png';
-        console.log("Desktop")
-    } else if (width >= 621 && width <= 999 && height > width) {
-        // Tablet Portrait
-        morning.src = '/assets/images/tablet_landscape_morning.png';
-        afternoon.src = '/assets/images/tablet_landscape_morning.png';
-        evening.src = '/assets/images/tablet_landscape_evening.png';
-        night.src = '/assets/images/tablet_landscape_night.png';
-        console.log("Tablet Portrait")
-    } else if (width >= 621 && width <= 999) {
-        // Tablet Landscape
-        morning.src = '/assets/images/desktop_landscape_morning.png';
-        afternoon.src = '/assets/images/desktop_landscape_morning.png';
-        evening.src = '/assets/images/desktop_landscape_evening.png';
-        night.src = '/assets/images/desktop_landscape_night.png';
-        console.log("Tablet Landscape")
-    } else if (width < 620) {
-        // Mobile
-        morning.src = '/assets/images/mobile_landscape_morning.png';
-        afternoon.src = '/assets/images/mobile_landscape_morning.png';
-        evening.src = '/assets/images/mobile_landscape_evening.png';
-        night.src = '/assets/images/mobile_landscape_night.png';
-        console.log("Mobile")
-    }
-}
-
-
 document.addEventListener("DOMContentLoaded", function () {
     const landscape_images = [
         "/assets/images/mobile_landscape_morning.png",
@@ -67,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Función para cambiar el fondo gradiente y la imagen correspondiente a la sección
-    function changeBackgroundGradient(section) {
+    const changeBackgroundGradient = (section) => {
         var backgroundContainer = document.querySelector(".background-section");
         backgroundContainer.classList.remove("active");
 
@@ -96,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Función para mostrar la imagen correspondiente a la sección actual
-    function changeBackgroundImage(section) {
+    const changeBackgroundImage = (section) => {
         const landscapeImage = document.getElementById("landscape_image");
         const skyImage = document.getElementById("sky_image");
         // Oculta la imagen actual
@@ -111,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Función para mostrar la imagen correspondiente a la sección actual
-    function changeContent(section) {
+    const changeContent = (section) => {
         $(".ul_container").css("justify-content" , "space-evenly");
         img.src = '/assets/buttons/down-scroll-button-rest.svg';
         removeNightStyles();
@@ -142,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    function addNightStyles() {
+    const addNightStyles = () => {
         // Seleccionar los elementos
         const h3Elements = document.querySelectorAll('li h3');
         const h1Elements = document.querySelectorAll('li h1');
@@ -162,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    function removeNightStyles() {
+    const removeNightStyles = () => {
         // Seleccionar los elementos li
         const h3Elements = document.querySelectorAll('li h3');
         const h1Elements = document.querySelectorAll('li h1');
@@ -183,7 +142,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Función para cambiar la imagen cuando se inicia la pulsación
-    function startPress() {
+    const startPress = () => {
         if (currentIndex !== 3) {
             img.src = '/assets/buttons/down-scroll-button-press.svg';
         } else {
@@ -192,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Función para restaurar la imagen cuando se levanta el botón
-    function endPress() {
+    const endPress = () => {
         img.src = '/assets/buttons/down-scroll-button-rest.svg';
     }
 
