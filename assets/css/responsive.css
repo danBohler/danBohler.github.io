@@ -10,9 +10,9 @@
 }
 
 @media (orientation : landscape) {
-    body {
+    /* body {
         display: none;
-    }
+    } */
 }
 
 @media only screen and (min-device-height: 645px) and (max-device-height : 720px) {
