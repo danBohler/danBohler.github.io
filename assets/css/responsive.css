@@ -11,7 +11,7 @@
 
 @media (orientation : landscape) {
     body {
-        display: none;    
+        display: none;
     }
 }
 
@@ -19,6 +19,7 @@
     .image-container {
         bottom: -4%;
     }
+
     .container_separator_horizontal {
         height: 16svh;
     }
@@ -31,8 +32,47 @@
     }
 }
 
+@media only screen and (min-device-height: 1001px) {
+    .ul_container { 
+        height: 786px !important;
+    }
+    /* span.separator_vertical {
+        height: 80px;;
+    } */
+    .container_separator_horizontal {
+        height: 320px;
+    }
+}
+
 @media only screen and (min-device-height: 1000px) {
     #last_separator_line {
         height: 60svh;
     }
-} 
+}
+
+@media only screen and (min-device-width : 480px), only screen and (min-height: 1000px) {
+    #scrollContainer {
+        height: 1000px;
+    }
+
+    .background-section {
+        box-shadow: -8px 8px 16px 16px #0000008F;
+    }
+
+    body {
+        background-image: url(../images/desktop_background_wood.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 100vh;
+    }
+
+    .image-container {
+        bottom: 0%;
+    }
+}
+
+@media only screen and (min-device-width : 1281px) {
+    /* body {
+        background-size: auto;
+    } */
+}
