@@ -34,9 +34,9 @@
 
 
 @media only screen and (min-device-height: 901px) {
-    .ul_container { 
+    /* .ul_container { 
        max-height: 740px !important;
-    }
+    } */
     span.separator_vertical {
         height: 30px;
     }

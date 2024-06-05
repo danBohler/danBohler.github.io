@@ -3,6 +3,14 @@
     display: none;
 }
 
+/* Desactiva la selección de texto para todos los elementos */
+* {
+    user-select: none;
+    -webkit-user-select: none; /* Chrome, Safari, Opera */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* Internet Explorer/Edge */
+}
+
 /* ELEMENTOS HTML */
 
 body,
@@ -419,8 +427,8 @@ div span.after-dot {
 
 #float-button img {
     position: relative;
-    height: 64px;
-    width: 64px;
+    height: 72px;
+    width: 72px;
     transition: background-image 0.3s ease;
     /* Transición suave para el cambio de imagen */
     border-radius: 50%;
