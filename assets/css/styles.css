@@ -184,13 +184,14 @@ img.icon-night {
 
 #fourth_ul {
     height: 100svh !important;
+    max-height: 740px;
 }
 
 
 /* SEPARATORS */
 
 .separator_container {
-    height: 8%;
+    height: 12%;
     display: flex;
     flex-direction: column;
     align-items: center;
