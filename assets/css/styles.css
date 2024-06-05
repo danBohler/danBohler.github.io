@@ -404,7 +404,7 @@ div span.after-dot {
     outline: none !important;
     padding: 0;
     cursor: pointer;
-    opacity: 0.56 !important;
+    opacity: 0.85 !important;
     /* Opacidad predeterminada */
     transition: background-image 0.3s ease, opacity 0.3s ease;
 }
