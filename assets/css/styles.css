@@ -108,6 +108,10 @@ img.icon-night {
 
 /* IMAGENES */
 
+#landscape_image, #sky_image {
+    transition: opacity 1s ease-in-out;
+}
+
 .sky-container {
     position: absolute;
     top: 0;
@@ -120,7 +124,6 @@ img.icon-night {
     height: 90%;
     width: -webkit-fill-available;
     object-fit: cover;
-    transition: opacity 1s ease-in-out;
 }
 
 .background-section {
@@ -185,6 +188,15 @@ img.icon-night {
 
 
 /* SEPARATORS */
+
+.separator {
+    height: 8%;
+    width: 1px;
+    content: '';
+    display: block;
+    background-color: #000000;
+    flex-grow: 1;
+}
 
 .container_separator_horizontal {
     height: 12svh;

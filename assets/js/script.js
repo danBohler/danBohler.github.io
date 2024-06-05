@@ -54,20 +54,27 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 200);
     }
 
-    // Función para mostrar la imagen correspondiente a la sección actual
     const changeBackgroundImage = (section) => {
         const landscapeImage = document.getElementById("landscape_image");
         const skyImage = document.getElementById("sky_image");
+    
         // Oculta la imagen actual
         landscapeImage.style.opacity = 0;
         skyImage.style.opacity = 0;
-        // Cambia la imagen al siguiente en el array
-        landscapeImage.src = landscape_images[section];
-        skyImage.src = sky_images[section];
-        // Muestra la nueva imagen con una transición
-        landscapeImage.style.opacity = 1;
-        skyImage.style.opacity = 1;
-    }
+    
+        // Espera a que la transición de opacidad termine antes de cambiar la imagen
+        setTimeout(() => {
+            // Cambia la imagen al siguiente en el array
+            landscapeImage.src = landscape_images[section];
+            // Muestra la nueva imagen con una transición
+            landscapeImage.style.opacity = 1;
+        }, 100); // Corresponde al tiempo de la transición de opacidad
+        // Espera a que la transición de opacidad termine antes de cambiar la imagen
+        setTimeout(() => {
+            skyImage.src = sky_images[section];
+            skyImage.style.opacity = 1;
+        }, 250); // Corresponde al tiempo de la transición de opacidad
+    };
 
     // Función para mostrar la imagen correspondiente a la sección actual
     const changeContent = (section) => {

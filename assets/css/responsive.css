@@ -3,11 +3,6 @@
 /* Estilos para móviles */
 /* HEIGHT */
 
-@media only screen and (min-device-height: 10px) and (max-device-height : 515px) {
-    .li_padding {}
-
-}
-
 @media (min-height: 600px) {
     .image-container {
         align-content: flex-end;
@@ -38,15 +33,21 @@
 }
 
 
-
 @media only screen and (min-device-height: 901px) {
     .ul_container { 
        height: 740px !important;
+    }
+    span.separator_vertical {
+        height: 30px;
+    }
+    .separator {
+        height: 72px!important;
     }
 }
 
 @media only screen and (min-device-height: 900px) {
     #last_separator_line {
+        max-height: 570px!important;
         height: 60svh;
     }
     .flex-container {
