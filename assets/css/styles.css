@@ -414,7 +414,7 @@ div span.after-dot {
 .flex-container {
     position: absolute;
     bottom: 0;
-    height: 25svh !important;
+    height: 20svh !important;
     width: 100%;
     z-index: 99999;
     display: flex;
@@ -512,8 +512,8 @@ div span.after-dot {
 
 #float-button img {
     position: relative;
-    height: 72px;
-    width: 72px;
+    height: 64px;
+    width: 64px;
     transition: background-image 0.3s ease;
     /* Transición suave para el cambio de imagen */
     border-radius: 50%;
