@@ -57,6 +57,12 @@ document.addEventListener("DOMContentLoaded", function () {
         changeBackgroundGradient(currentIndex);
         changeBackgroundImage(currentIndex);
         changeContent(currentIndex);
+
+        // Add clicked class to float button
+        floatButton.classList.add('clicked');
+        setTimeout(() => {
+            floatButton.classList.remove('clicked');
+        }, 1000); // Duration of the animation
     });
 
     const changeBackgroundGradient = (section) => {
@@ -140,21 +146,32 @@ document.addEventListener("DOMContentLoaded", function () {
                 $("#scrollContainer").animate({
                     scrollTop: $("#first_ul").offset().top
                 }, 'slow');
+                img.src = '/assets/buttons/down-scroll-button-rest.svg';
+                img.classList.remove('rotate');
+                img.classList.add('rotate-back');
                 break;
             case 1:
                 $("#scrollContainer").animate({
                     scrollTop: $("#second_ul").offset().top - $("#fixed").offset().top
                 }, 'slow');
+                img.src = '/assets/buttons/down-scroll-button-rest.svg';
+                img.classList.remove('rotate');
+                img.classList.remove('rotate-back');
                 break;
             case 2:
                 $("#scrollContainer").animate({
                     scrollTop: $("#scrollContainer").scrollTop() - $("#fixed").offset().top + $("#third_ul").offset().top
                 }, 'slow');
+                img.src = '/assets/buttons/down-scroll-button-rest.svg';
+                img.classList.remove('rotate');
+                img.classList.remove('rotate-back');
                 break;
             case 3:
                 addNightStyles();
                 $(".ul_container").css("justify-content", "space-between");
-                img.src = '/assets/buttons/up-scroll-button-rest.svg';
+                img.src = '/assets/buttons/down-scroll-button-rest.svg';
+                img.classList.add('rotate');
+                img.classList.remove('rotate-back');
                 $("#scrollContainer").animate({
                     scrollTop: $("#scrollContainer").scrollTop() - $("#fixed").offset().top + $("#fourth_ul").offset().top
                 }, 'slow');
@@ -201,11 +218,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     const startPress = () => {
-        if (currentIndex !== 3) {
-            img.src = '/assets/buttons/down-scroll-button-press.svg';
-        } else {
-            img.src = '/assets/buttons/up-scroll-button-press.svg';
-        }
+        img.src = '/assets/buttons/down-scroll-button-press.svg';
     }
 
     const endPress = () => {
