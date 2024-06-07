@@ -17,6 +17,40 @@ document.addEventListener("DOMContentLoaded", function () {
     const img = document.getElementById('button-image');
 
     let currentIndex = 0;
+    let currentLandscapeImage = null;
+    let currentSkyImage = null;
+
+    // Preload the initial images
+    const preloadImage = (src) => {
+        return new Promise((resolve) => {
+            const img = new Image();
+            img.src = src;
+            img.onload = () => resolve(img);
+        });
+    };
+
+    let preloadedLandscapeImages = [];
+    let preloadedSkyImages = [];
+
+    Promise.all(landscape_images.map(src => preloadImage(src)))
+        .then(images => {
+            preloadedLandscapeImages = images;
+            return Promise.all(sky_images.map(src => preloadImage(src)));
+        })
+        .then(images => {
+            preloadedSkyImages = images;
+            // After all images are preloaded, set the initial images
+            setInitialImages();
+        });
+
+    const setInitialImages = () => {
+        const landscapeImage = document.getElementById("landscape_image");
+        const skyImage = document.getElementById("sky_image");
+        landscapeImage.src = preloadedLandscapeImages[0].src;
+        skyImage.src = preloadedSkyImages[0].src;
+        currentLandscapeImage = landscapeImage;
+        currentSkyImage = skyImage;
+    };
 
     floatButton.addEventListener('click', function () {
         currentIndex = (currentIndex + 1) % uls.length;
@@ -25,17 +59,14 @@ document.addEventListener("DOMContentLoaded", function () {
         changeContent(currentIndex);
     });
 
-    // Función para cambiar el fondo gradiente y la imagen correspondiente a la sección
     const changeBackgroundGradient = (section) => {
-        var backgroundContainer = document.querySelector(".background-section");
+        const backgroundContainer = document.querySelector(".background-section");
         backgroundContainer.classList.remove("active");
 
         setTimeout(() => {
             backgroundContainer.classList.remove("morning", "evening", "night", "text-night");
             switch (section) {
                 case 0:
-                    backgroundContainer.classList.add("morning");
-                    break;
                 case 1:
                     backgroundContainer.classList.add("morning");
                     break;
@@ -57,28 +88,51 @@ document.addEventListener("DOMContentLoaded", function () {
     const changeBackgroundImage = (section) => {
         const landscapeImage = document.getElementById("landscape_image");
         const skyImage = document.getElementById("sky_image");
-    
-        // Oculta la imagen actual
-        landscapeImage.style.opacity = 0;
-        skyImage.style.opacity = 0;
-    
-        // Espera a que la transición de opacidad termine antes de cambiar la imagen
+
+        // Clone the preloaded images and set necessary attributes
+        const nextLandscapeImage = preloadedLandscapeImages[section].cloneNode();
+        nextLandscapeImage.id = 'landscape_image';
+        nextLandscapeImage.style.position = 'absolute';
+        nextLandscapeImage.style.bottom = '0';
+        nextLandscapeImage.style.left = '0';
+        nextLandscapeImage.style.width = '100%';
+        nextLandscapeImage.style.opacity = '0';
+        nextLandscapeImage.style.transition = 'opacity 1s ease-in-out';
+        nextLandscapeImage.style.zIndex = '2';
+
+        const nextSkyImage = preloadedSkyImages[section].cloneNode();
+        nextSkyImage.id = 'sky_image';
+        nextSkyImage.style.position = 'absolute';
+        nextSkyImage.style.top = '0';
+        nextSkyImage.style.left = '0';
+        nextSkyImage.style.width = '100%';
+        nextSkyImage.style.opacity = '0';
+        nextSkyImage.style.transition = 'opacity 1s ease-in-out';
+        nextSkyImage.style.zIndex = '1';
+
+        landscapeImage.parentElement.appendChild(nextLandscapeImage);
+        skyImage.parentElement.appendChild(nextSkyImage);
+
+        // Transition to the new images
         setTimeout(() => {
-            // Cambia la imagen al siguiente en el array
-            landscapeImage.src = landscape_images[section];
-            // Muestra la nueva imagen con una transición
-            landscapeImage.style.opacity = 1;
-        }, 100); // Corresponde al tiempo de la transición de opacidad
-        // Espera a que la transición de opacidad termine antes de cambiar la imagen
-        setTimeout(() => {
-            skyImage.src = sky_images[section];
-            skyImage.style.opacity = 1;
-        }, 250); // Corresponde al tiempo de la transición de opacidad
+            nextLandscapeImage.style.opacity = '1';
+            landscapeImage.style.opacity = '0';
+
+            nextSkyImage.style.opacity = '1';
+            skyImage.style.opacity = '0';
+
+            setTimeout(() => {
+                currentLandscapeImage.remove();
+                currentSkyImage.remove();
+
+                currentLandscapeImage = nextLandscapeImage;  // Track the current image
+                currentSkyImage = nextSkyImage;  // Track the current image
+            }, 1000);  // Delay the removal until after the transition
+        }, 100);
     };
 
-    // Función para mostrar la imagen correspondiente a la sección actual
     const changeContent = (section) => {
-        $(".ul_container").css("justify-content" , "space-evenly");
+        $(".ul_container").css("justify-content", "space-evenly");
         img.src = '/assets/buttons/down-scroll-button-rest.svg';
         removeNightStyles();
         switch (section) {
@@ -99,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 break;
             case 3:
                 addNightStyles();
-                $(".ul_container").css("justify-content" , "space-between");
+                $(".ul_container").css("justify-content", "space-between");
                 img.src = '/assets/buttons/up-scroll-button-rest.svg';
                 $("#scrollContainer").animate({
                     scrollTop: $("#scrollContainer").scrollTop() - $("#fixed").offset().top + $("#fourth_ul").offset().top
@@ -109,7 +163,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     const addNightStyles = () => {
-        // Seleccionar los elementos
         const h3Elements = document.querySelectorAll('li h3');
         const h1Elements = document.querySelectorAll('li h1');
         const spanElements = document.querySelectorAll('li span');
@@ -129,7 +182,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     const removeNightStyles = () => {
-        // Seleccionar los elementos li
         const h3Elements = document.querySelectorAll('li h3');
         const h1Elements = document.querySelectorAll('li h1');
         const spanElements = document.querySelectorAll('li span');
@@ -148,7 +200,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Función para cambiar la imagen cuando se inicia la pulsación
     const startPress = () => {
         if (currentIndex !== 3) {
             img.src = '/assets/buttons/down-scroll-button-press.svg';
@@ -157,16 +208,13 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Función para restaurar la imagen cuando se levanta el botón
     const endPress = () => {
         img.src = '/assets/buttons/down-scroll-button-rest.svg';
     }
 
-    // Agregar event listeners para eventos de ratón
     floatButton.addEventListener('mousedown', startPress);
     floatButton.addEventListener('mouseup', endPress);
 
-    // Agregar event listeners para eventos de tacto
     floatButton.addEventListener('touchstart', startPress);
     floatButton.addEventListener('touchend', endPress);
 });

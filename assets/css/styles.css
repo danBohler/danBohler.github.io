@@ -120,12 +120,34 @@ img.icon-night {
     transition: opacity 1s ease-in-out;
 }
 
+.sky-container,
+.image-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
 .sky-container {
     position: absolute;
     top: 0;
     height: 100svh !important;
     max-height: 900px;
     width: 100%;
+    z-index: 1;
+}
+
+.image-container {
+    bottom: 0;
+    z-index: 2;
+}
+
+.sky-container img,
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    transition: opacity 1s ease-in-out;
 }
 
 #sky_image {
@@ -158,6 +180,7 @@ img.icon-night {
     margin: 64px 24px;
     height: auto;
     position: relative;
+    z-index: 2;
 }
 
 #first_ul {
@@ -263,7 +286,7 @@ div span.after-dot {
 /* IMAGE CONTAINER */
     
 .image-container {
-    /* display: none; */
+    display: flex;
     height: 30svh;
     width: 100%;
     transition: background 1s ease-in-out;
@@ -271,7 +294,7 @@ div span.after-dot {
     bottom: -3%;
     left: 0;
     opacity: 1;
-    z-index: 1;
+    z-index: 3;
 }
 
 
