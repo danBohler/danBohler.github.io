@@ -428,6 +428,30 @@ div span.after-dot {
 
 /* BUTTON */
 
+@keyframes bounceUp {
+    0% {
+        transform: translateY(4px);
+    }
+    50% {
+        transform: translateY(-4px);
+    }
+    100% {
+        transform: translateY(4px);
+    }
+}
+
+@keyframes bounceDown {
+    0% {
+        transform: translateY(-4px);
+    }
+    50% {
+        transform: translateY(4px);
+    }
+    100% {
+        transform: translateY(-4px);
+    }
+}
+
 @keyframes buttonClickAnimation {
     0% {
         transform: scale(1);
@@ -435,22 +459,9 @@ div span.after-dot {
     }
 
     10% {
-        transform: scale(1.05);
+        transform: scale(1.08);
         opacity: 1;
     }
-
-    /* 20% {
-        visibility: hidden;
-    }
-
-    35% {
-        visibility:hidden;
-    }
-
-    50% {
-        transform: scale(1);
-        opacity: 1;
-    } */
 }
 
 @keyframes rotate180 {
@@ -460,6 +471,16 @@ div span.after-dot {
     100% {
         transform: rotate(-180deg);
     }
+}
+
+#button-image.bounceDown {
+    position: relative;
+    animation: bounceDown 1.2s infinite;
+}
+
+#button-image.bounceUp {
+    position: relative;
+    animation: bounceUp 1.2s infinite;
 }
 
 #button-image.rotate {
@@ -476,7 +497,7 @@ div span.after-dot {
 }
 
 #button-image.rotate-back {
-    animation: rotateBack180 1s forwards;
+    animation: rotateBack180 1s forwards, bounce 1.2s infinite;
 }
 
 #float-button.clicked {
@@ -486,6 +507,9 @@ div span.after-dot {
 }
 
 #float-button {
+    height: 64px;
+    width: 64px;
+    border-radius: 50px;
     -webkit-tap-highlight-color: transparent;
     /* for removing the highlight */
     background: none !important;
@@ -516,8 +540,8 @@ div span.after-dot {
 
 #float-button img {
     position: relative;
-    height: 64px;
-    width: 64px;
+    /* height: 22;
+    width: 22; */
     transition: background-image 0.3s ease;
     /* Transición suave para el cambio de imagen */
     border-radius: 50%;

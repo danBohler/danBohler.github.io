@@ -144,22 +144,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const changeContent = (section) => {
         $(".ul_container").css("justify-content", "space-evenly");
-        img.src = '/assets/buttons/down-scroll-button-rest.svg';
         removeNightStyles();
         switch (section) {
             case 0:
                 $("#scrollContainer").animate({
                     scrollTop: $("#first_ul").offset().top
                 }, 'slow');
-                img.src = '/assets/buttons/down-scroll-button-rest.svg';
+                img.classList.remove('bounceUp');
                 img.classList.remove('rotate');
-                img.classList.add('rotate-back');
+                img.classList.add('rotate');
+                setTimeout(() => {
+                    img.src = '/assets/buttons/arrow-button-down.svg';
+                    img.classList.remove('rotate');
+                    img.classList.add('bounceDown');
+                }, 1000);
                 break;
             case 1:
                 $("#scrollContainer").animate({
                     scrollTop: $("#second_ul").offset().top - $("#fixed").offset().top
                 }, 'slow');
-                img.src = '/assets/buttons/down-scroll-button-rest.svg';
                 img.classList.remove('rotate');
                 img.classList.remove('rotate-back');
                 break;
@@ -167,16 +170,20 @@ document.addEventListener("DOMContentLoaded", function () {
                 $("#scrollContainer").animate({
                     scrollTop: $("#scrollContainer").scrollTop() - $("#fixed").offset().top + $("#third_ul").offset().top
                 }, 'slow');
-                img.src = '/assets/buttons/down-scroll-button-rest.svg';
                 img.classList.remove('rotate');
                 img.classList.remove('rotate-back');
                 break;
             case 3:
                 addNightStyles();
                 $(".ul_container").css("justify-content", "space-between");
-                img.src = '/assets/buttons/down-scroll-button-rest.svg';
+                img.classList.remove('bounceDown');
                 img.classList.add('rotate');
                 img.classList.remove('rotate-back');
+                setTimeout(() => {
+                    img.src = '/assets/buttons/arrow-button-up.svg';
+                    img.classList.remove('rotate');
+                    img.classList.add('bounceUp');
+                }, 1000);
                 $("#scrollContainer").animate({
                     scrollTop: $("#scrollContainer").scrollTop() - $("#fixed").offset().top + $("#fourth_ul").offset().top
                 }, 'slow');
@@ -222,17 +229,17 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    const startPress = () => {
-        img.src = '/assets/buttons/down-scroll-button-press.svg';
-    }
+    // const startPress = () => {
+    //     img.src = '/assets/buttons/arrow-button-up.svg';
+    // }
 
-    const endPress = () => {
-        img.src = '/assets/buttons/down-scroll-button-rest.svg';
-    }
+    // const endPress = () => {
+    //     img.src = '/assets/buttons/arrow-button-down.svg';
+    // }
 
-    floatButton.addEventListener('mousedown', startPress);
-    floatButton.addEventListener('mouseup', endPress);
+    // floatButton.addEventListener('mousedown', startPress);
+    // floatButton.addEventListener('mouseup', endPress);
 
-    floatButton.addEventListener('touchstart', startPress);
-    floatButton.addEventListener('touchend', endPress);
+    // floatButton.addEventListener('touchstart', startPress);
+    // floatButton.addEventListener('touchend', endPress);
 });
