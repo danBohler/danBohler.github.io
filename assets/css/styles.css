@@ -18,6 +18,7 @@
 
 body,
 html {
+    min-height: 500px;
     height: 100%;
     width: 100%;
     margin: 0;
@@ -132,6 +133,7 @@ img.icon-night {
 }
 
 .sky-container {
+    min-height: 360px;
     position: absolute;
     top: 0;
     height: 100svh !important;
@@ -155,6 +157,7 @@ img.icon-night {
 }
 
 #sky_image {
+    min-height: 460px;
     height: 90%;
     width: -webkit-fill-available;
     object-fit: cover;

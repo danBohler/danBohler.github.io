@@ -106,6 +106,11 @@ document.addEventListener("DOMContentLoaded", function () {
         nextLandscapeImage.style.transition = 'opacity 1s ease-in-out';
         nextLandscapeImage.style.zIndex = '2';
 
+        // Check window height and set height to auto if less than 600px
+        if (window.innerHeight < 600) {
+            nextLandscapeImage.style.bottom = 'auto';
+        }
+
         const nextSkyImage = preloadedSkyImages[section].cloneNode();
         nextSkyImage.id = 'sky_image';
         nextSkyImage.style.position = 'absolute';
@@ -131,9 +136,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 currentLandscapeImage.remove();
                 currentSkyImage.remove();
 
-                currentLandscapeImage = nextLandscapeImage;  // Track the current image
-                currentSkyImage = nextSkyImage;  // Track the current image
-            }, 1000);  // Delay the removal until after the transition
+                currentLandscapeImage = nextLandscapeImage; // Track the current image
+                currentSkyImage = nextSkyImage; // Track the current image
+            }, 1000); // Delay the removal until after the transition
         }, 100);
     };
 

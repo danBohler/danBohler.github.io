@@ -3,6 +3,13 @@
 /* Estilos para móviles */
 /* HEIGHT */
 
+/* Media query para pantallas con una altura menor o igual a 600px */
+@media (max-height: 600px) {
+    .image-container img {
+        height: auto;
+    }
+}
+
 @media (min-height: 600px) {
     .image-container {
         align-content: flex-end;
@@ -34,14 +41,30 @@
 
 
 @media only screen and (min-device-height: 901px) {
+    .separator_container.last_ul {
+        height: 260px!important;
+    }
+    #fourth_ul {
+        height: 760px !important;
+        margin-bottom: 138px;
+    }
     .ul_container { 
-       max-height: 720px !important;
+       max-height: 700px !important;
     }
     span.separator_vertical {
-        height: 30px;
+        height: 16px!important;
+    }
+    .separator_container {
+        height: 40px;
     }
     .separator {
-        height: 72px!important;
+        height: 40px!important;
+    }
+    #last_separator_line {
+        max-height: 260px;
+    }
+    #first_ul {
+        margin-bottom: 60px;
     }
 }
 
