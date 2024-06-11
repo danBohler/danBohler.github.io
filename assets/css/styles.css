@@ -440,6 +440,18 @@ div span.after-dot {
     }
 }
 
+@keyframes reBounceDown {
+    0% {
+        transform: translateY(4px);
+    }
+    50% {
+        transform: translateY(-4px);
+    }
+    100% {
+        transform: translateY(4px);
+    }
+}
+
 @keyframes bounceDown {
     0% {
         transform: translateY(-4px);
@@ -473,20 +485,6 @@ div span.after-dot {
     }
 }
 
-#button-image.bounceDown {
-    position: relative;
-    animation: bounceDown 1.2s infinite;
-}
-
-#button-image.bounceUp {
-    position: relative;
-    animation: bounceUp 1.2s infinite;
-}
-
-#button-image.rotate {
-    animation: rotate180 1s forwards;
-}
-
 @keyframes rotateBack180 {
     0% {
         transform: rotate(-180deg);
@@ -496,12 +494,33 @@ div span.after-dot {
     }
 }
 
+#button-image.bounceDown {
+    position: relative;
+    animation: bounceDown 1.2s infinite;
+}
+
+#button-image.reBounceDown {
+    position: relative;
+    animation: reBounceDown 1.2s infinite;
+}
+
+#button-image.bounceUp {
+    position: relative;
+    animation: bounceUp 1.2s infinite;
+}
+
+#button-image.rotate {
+    transform-origin: center;
+    animation: rotate180 1.2s forwards;
+}
+
 #button-image.rotate-back {
-    animation: rotateBack180 1s forwards, bounce 1.2s infinite;
+    transform-origin: center;
+    animation: rotateBack180 1.2s forwards, bounce 1.2s infinite;
 }
 
 #float-button.clicked {
-    animation: buttonClickAnimation 1s forwards;
+    animation: buttonClickAnimation 1.2s forwards;
     will-change: opacity, transform, display;
     cursor: pointer;
 }
@@ -511,20 +530,17 @@ div span.after-dot {
     width: 64px;
     border-radius: 50px;
     -webkit-tap-highlight-color: transparent;
-    /* for removing the highlight */
     background: none !important;
     border: none !important;
     outline: none !important;
     padding: 0;
     cursor: pointer;
     opacity: 0.85 !important;
-    /* Opacidad predeterminada */
     transition: background-image 0.3s ease, opacity 0.3s ease;
 }
 
 #float-button:active {
     opacity: 0.85 !important;
-    /* Opacidad al estar activo */
 }
 
 #float-button:focus {
@@ -532,19 +548,13 @@ div span.after-dot {
     box-shadow: none;
 }
 
-
 #float-button:not(:hover):not(:active) {
     opacity: 0.85 !important;
-    /* Opacidad predeterminada cuando no está en :hover ni :active */
 }
 
 #float-button img {
     position: relative;
-    /* height: 22;
-    width: 22; */
     transition: background-image 0.3s ease;
-    /* Transición suave para el cambio de imagen */
     border-radius: 50%;
-    /* Hace que el botón sea redondo */
     background-color: transparent;
 }

@@ -154,10 +154,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 img.classList.remove('rotate');
                 img.classList.add('rotate');
                 setTimeout(() => {
-                    img.src = '/assets/buttons/arrow-button-down.svg';
                     img.classList.remove('rotate');
-                    img.classList.add('bounceDown');
-                }, 1000);
+                    img.src = '/assets/buttons/arrow-button-down.svg';
+                    $("#button-image").css('transform', 'translateY(4px)');
+                    img.classList.add('reBounceDown');
+                }, 1200);
                 break;
             case 1:
                 $("#scrollContainer").animate({
@@ -183,7 +184,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     img.src = '/assets/buttons/arrow-button-up.svg';
                     img.classList.remove('rotate');
                     img.classList.add('bounceUp');
-                }, 1000);
+                }, 1200);
                 $("#scrollContainer").animate({
                     scrollTop: $("#scrollContainer").scrollTop() - $("#fixed").offset().top + $("#fourth_ul").offset().top
                 }, 'slow');
