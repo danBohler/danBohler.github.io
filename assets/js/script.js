@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function () {
             case 0:
                 $("#scrollContainer").animate({
                     scrollTop: $("#first_ul").offset().top
-                }, 2600, 'easeOutQuad')
+                }, 2600, 'easeInOutQuad')
                 img.classList.remove('bounceUp');
                 img.classList.add('rotate');
                 setTimeout(() => {
@@ -161,14 +161,16 @@ document.addEventListener("DOMContentLoaded", function () {
                     img.src = '/assets/buttons/arrow-button-down.svg';
                     setTimeout(() => {
                         img.classList.add('reBounceDown');
-                        floatButton.removeClass('disabled');
                     }, 100);
                 }, 1600);
+                setTimeout(() => {
+                    floatButton.removeClass('disabled');
+                }, 2300);
                 break;
             case 1:
                 $("#scrollContainer").animate({
                     scrollTop: $("#second_ul").offset().top - $("#fixed").offset().top
-                }, 1200, 'easeOutCubic');
+                }, 1200, 'easeInOutCubic');
                 img.classList.remove('rotate');
                 img.classList.remove('rotate-back');
                 setTimeout(() => {
@@ -178,7 +180,7 @@ document.addEventListener("DOMContentLoaded", function () {
             case 2:
                 $("#scrollContainer").animate({
                     scrollTop: $("#scrollContainer").scrollTop() - $("#fixed").offset().top + $("#third_ul").offset().top
-                }, 1200, 'easeOutCubic');
+                }, 1200, 'easeInOutCubic');
                 img.classList.remove('rotate');
                 img.classList.remove('rotate-back');
                 setTimeout(() => {
@@ -199,7 +201,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }, 1200);
                 $("#scrollContainer").animate({
                     scrollTop: $("#scrollContainer").scrollTop() - $("#fixed").offset().top + $("#fourth_ul").offset().top
-                }, 1200, 'easeOutCubic');
+                }, 1200, 'easeInOutCubic');
                 break;
         }
     }
