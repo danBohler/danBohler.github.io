@@ -74,6 +74,13 @@ ul {
 }
 
 div h3#iban {
+    user-select: all;
+    -webkit-user-select: all;
+    /* Chrome, Safari, Opera */
+    -moz-user-select: all;
+    /* Firefox */
+    -ms-user-select: all;
+    /* Internet Explorer/Edge */
     margin: 24px 0;
 }
 
