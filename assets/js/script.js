@@ -153,16 +153,18 @@ document.addEventListener("DOMContentLoaded", function () {
             case 0:
                 $("#scrollContainer").animate({
                     scrollTop: $("#first_ul").offset().top
-                }, 1600)
+                }, 3000, 'easeInOutQuad')
                 img.classList.remove('bounceUp');
                 $("#button-image").css('transform', 'translateY(4px)');
                 img.classList.add('rotate');
                 setTimeout(() => {
                     img.classList.remove('rotate');
-                    img.src = '/assets/buttons/arrow-button-down.svg';
                     $("#button-image").css('transform', 'translateY(0px)');
-                    img.classList.add('reBounceDown');
-                    floatButton.removeClass('disabled');
+                    img.src = '/assets/buttons/arrow-button-down.svg';
+                    setTimeout(() => {
+                        img.classList.add('reBounceDown');
+                        floatButton.removeClass('disabled');
+                    }, 100);
                 }, 1600);
                 break;
             case 1:
@@ -192,10 +194,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 img.classList.add('rotate');
                 img.classList.remove('rotate-back');
                 setTimeout(() => {
-                    img.src = '/assets/buttons/arrow-button-up.svg';
                     img.classList.remove('rotate');
-                    img.classList.add('bounceUp');
-                    floatButton.removeClass('disabled');
+                    img.src = '/assets/buttons/arrow-button-up.svg';
+                    setTimeout(() => {
+                        img.classList.add('bounceUp');
+                        floatButton.removeClass('disabled');
+                    }, 100);
                 }, 1200);
                 $("#scrollContainer").animate({
                     scrollTop: $("#scrollContainer").scrollTop() - $("#fixed").offset().top + $("#fourth_ul").offset().top
