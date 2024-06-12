@@ -153,17 +153,17 @@ document.addEventListener("DOMContentLoaded", function () {
             case 0:
                 $("#scrollContainer").animate({
                     scrollTop: $("#first_ul").offset().top
-                }, 1800);
+                }, 1600);
                 img.classList.remove('bounceUp');
-                img.classList.remove('rotate');
+                $("#button-image").css('transform', 'translateY(4px)');
                 img.classList.add('rotate');
                 setTimeout(() => {
                     img.classList.remove('rotate');
                     img.src = '/assets/buttons/arrow-button-down.svg';
-                    $("#button-image").css('transform', 'translateY(4px)');
+                    $("#button-image").css('transform', 'translateY(0px)');
                     img.classList.add('reBounceDown');
                     floatButton.removeClass('disabled');
-                }, 1200);
+                }, 1600);
                 break;
             case 1:
                 $("#scrollContainer").animate({
@@ -196,7 +196,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     img.classList.remove('rotate');
                     img.classList.add('bounceUp');
                     floatButton.removeClass('disabled');
-                }, 1300);
+                }, 1200);
                 $("#scrollContainer").animate({
                     scrollTop: $("#scrollContainer").scrollTop() - $("#fixed").offset().top + $("#fourth_ul").offset().top
                 }, 'slow');

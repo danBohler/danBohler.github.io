@@ -498,17 +498,17 @@ div span.after-dot {
 
 #button-image.bounceDown {
     position: relative;
-    animation: bounceDown 1.2s infinite;
+    animation: bounceDown ease-in 1.2s infinite;
 }
 
 #button-image.reBounceDown {
     position: relative;
-    animation: reBounceDown 1.2s infinite;
+    animation: reBounceDown ease-in 1.2s infinite;
 }
 
 #button-image.bounceUp {
     position: relative;
-    animation: bounceUp 1.2s infinite;
+    animation: bounceUp ease-in 1.2s infinite;
 }
 
 #button-image.rotate {
