@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function () {
             case 0:
                 $("#scrollContainer").animate({
                     scrollTop: $("#first_ul").offset().top
-                }, 3000, 'easeInOutQuad')
+                }, 2600, 'easeOutQuad')
                 img.classList.remove('bounceUp');
                 img.classList.add('rotate');
                 setTimeout(() => {
@@ -168,7 +168,7 @@ document.addEventListener("DOMContentLoaded", function () {
             case 1:
                 $("#scrollContainer").animate({
                     scrollTop: $("#second_ul").offset().top - $("#fixed").offset().top
-                }, 1200, 'easeInOutCubic');
+                }, 1200, 'easeOutCubic');
                 img.classList.remove('rotate');
                 img.classList.remove('rotate-back');
                 setTimeout(() => {
@@ -178,7 +178,7 @@ document.addEventListener("DOMContentLoaded", function () {
             case 2:
                 $("#scrollContainer").animate({
                     scrollTop: $("#scrollContainer").scrollTop() - $("#fixed").offset().top + $("#third_ul").offset().top
-                }, 1200, 'easeInOutCubic');
+                }, 1200, 'easeOutCubic');
                 img.classList.remove('rotate');
                 img.classList.remove('rotate-back');
                 setTimeout(() => {
@@ -199,7 +199,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }, 1200);
                 $("#scrollContainer").animate({
                     scrollTop: $("#scrollContainer").scrollTop() - $("#fixed").offset().top + $("#fourth_ul").offset().top
-                }, 1200, 'easeInOutCubic');
+                }, 1200, 'easeOutCubic');
                 break;
         }
     }
