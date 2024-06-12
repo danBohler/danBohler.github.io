@@ -155,17 +155,15 @@ document.addEventListener("DOMContentLoaded", function () {
                     scrollTop: $("#first_ul").offset().top
                 }, 3000, 'easeInOutQuad')
                 img.classList.remove('bounceUp');
-                $("#button-image").css('transform', 'translateY(4px)');
                 img.classList.add('rotate');
                 setTimeout(() => {
                     img.classList.remove('rotate');
-                    $("#button-image").css('transform', 'translateY(0px)');
                     img.src = '/assets/buttons/arrow-button-down.svg';
                     setTimeout(() => {
                         img.classList.add('reBounceDown');
                         floatButton.removeClass('disabled');
                     }, 100);
-                }, 3000);
+                }, 1600);
                 break;
             case 1:
                 $("#scrollContainer").animate({
