@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function () {
             case 0:
                 $("#scrollContainer").animate({
                     scrollTop: $("#first_ul").offset().top
-                }, 1600);
+                }, 1600)
                 img.classList.remove('bounceUp');
                 $("#button-image").css('transform', 'translateY(4px)');
                 img.classList.add('rotate');
@@ -168,17 +168,17 @@ document.addEventListener("DOMContentLoaded", function () {
             case 1:
                 $("#scrollContainer").animate({
                     scrollTop: $("#second_ul").offset().top - $("#fixed").offset().top
-                }, 'slow');
+                }, 1200, 'easeInOutCubic');
                 img.classList.remove('rotate');
                 img.classList.remove('rotate-back');
                 setTimeout(() => {
                     floatButton.removeClass('disabled'); // Habilita el botón
-                }, 1200);
+                }, 1200,);
                 break;
             case 2:
                 $("#scrollContainer").animate({
                     scrollTop: $("#scrollContainer").scrollTop() - $("#fixed").offset().top + $("#third_ul").offset().top
-                }, 'slow');
+                }, 1200, 'easeInOutCubic');
                 img.classList.remove('rotate');
                 img.classList.remove('rotate-back');
                 setTimeout(() => {
@@ -199,7 +199,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }, 1200);
                 $("#scrollContainer").animate({
                     scrollTop: $("#scrollContainer").scrollTop() - $("#fixed").offset().top + $("#fourth_ul").offset().top
-                }, 'slow');
+                }, 1200, 'easeInOutCubic');
                 break;
         }
     }
