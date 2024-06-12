@@ -145,11 +145,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const changeContent = (section) => {
         $(".ul_container").css("justify-content", "space-evenly");
         removeNightStyles();
+        
+        const floatButton = $('#float-button');
+        floatButton.addClass('disabled'); 
+        
         switch (section) {
             case 0:
                 $("#scrollContainer").animate({
                     scrollTop: $("#first_ul").offset().top
-                }, 'slow');
+                }, 1800);
                 img.classList.remove('bounceUp');
                 img.classList.remove('rotate');
                 img.classList.add('rotate');
@@ -158,6 +162,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     img.src = '/assets/buttons/arrow-button-down.svg';
                     $("#button-image").css('transform', 'translateY(4px)');
                     img.classList.add('reBounceDown');
+                    floatButton.removeClass('disabled');
                 }, 1200);
                 break;
             case 1:
@@ -166,6 +171,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 }, 'slow');
                 img.classList.remove('rotate');
                 img.classList.remove('rotate-back');
+                setTimeout(() => {
+                    floatButton.removeClass('disabled'); // Habilita el botón
+                }, 1200);
                 break;
             case 2:
                 $("#scrollContainer").animate({
@@ -173,6 +181,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 }, 'slow');
                 img.classList.remove('rotate');
                 img.classList.remove('rotate-back');
+                setTimeout(() => {
+                    floatButton.removeClass('disabled'); // Habilita el botón
+                }, 1200);
                 break;
             case 3:
                 addNightStyles();
@@ -184,6 +195,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     img.src = '/assets/buttons/arrow-button-up.svg';
                     img.classList.remove('rotate');
                     img.classList.add('bounceUp');
+                    floatButton.removeClass('disabled');
                 }, 1200);
                 $("#scrollContainer").animate({
                     scrollTop: $("#scrollContainer").scrollTop() - $("#fixed").offset().top + $("#fourth_ul").offset().top

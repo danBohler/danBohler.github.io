@@ -478,6 +478,7 @@ div span.after-dot {
 
 @keyframes rotate180 {
     0% {
+        transform: translateY(0px);
         transform: rotate(0deg);
     }
     100% {
@@ -487,6 +488,7 @@ div span.after-dot {
 
 @keyframes rotateBack180 {
     0% {
+        transform: translateY(0px);
         transform: rotate(-180deg);
     }
     100% {
@@ -557,4 +559,8 @@ div span.after-dot {
     transition: background-image 0.3s ease;
     border-radius: 50%;
     background-color: transparent;
+}
+
+#float-button.disabled {
+    pointer-events: none;
 }
