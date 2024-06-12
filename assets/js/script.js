@@ -196,7 +196,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     img.classList.remove('rotate');
                     img.classList.add('bounceUp');
                     floatButton.removeClass('disabled');
-                }, 1200);
+                }, 1300);
                 $("#scrollContainer").animate({
                     scrollTop: $("#scrollContainer").scrollTop() - $("#fixed").offset().top + $("#fourth_ul").offset().top
                 }, 'slow');
