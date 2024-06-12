@@ -165,7 +165,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         img.classList.add('reBounceDown');
                         floatButton.removeClass('disabled');
                     }, 100);
-                }, 1600);
+                }, 3000);
                 break;
             case 1:
                 $("#scrollContainer").animate({
@@ -196,10 +196,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 setTimeout(() => {
                     img.classList.remove('rotate');
                     img.src = '/assets/buttons/arrow-button-up.svg';
-                    setTimeout(() => {
-                        img.classList.add('bounceUp');
-                        floatButton.removeClass('disabled');
-                    }, 100);
+                    img.classList.add('bounceUp');
+                    floatButton.removeClass('disabled');
                 }, 1200);
                 $("#scrollContainer").animate({
                     scrollTop: $("#scrollContainer").scrollTop() - $("#fixed").offset().top + $("#fourth_ul").offset().top
