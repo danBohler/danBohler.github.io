@@ -266,4 +266,8 @@ document.addEventListener("DOMContentLoaded", function () {
         // Opcional: Muestra una alerta o un mensaje indicando que el texto ha sido copiado
         alert('IBAN copiado al portapapeles');
     });
+
+    document.getElementById('busInfo').addEventListener('click', function() {
+        window.open('https://www.google.com/maps?q=43.483440,-5.438916', '_blank');
+    });
 });
