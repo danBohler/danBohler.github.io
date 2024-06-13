@@ -579,7 +579,7 @@ div span.after-dot {
     width: max-content;
     display: none;
     position: fixed;
-    bottom: 20%;
+    bottom: 25%;
     left: 50%;
     transform: translateX(-50%);
     background-color: #333;
