@@ -1,4 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
+    
+    document.body.classList.remove('loading');
+    document.body.classList.add('loaded');
+
     const landscape_images = [
         "/assets/images/mobile_landscape_morning.png",
         "/assets/images/mobile_landscape_morning.png",
