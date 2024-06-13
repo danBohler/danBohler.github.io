@@ -1,8 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-    
-    document.body.classList.remove('loading');
-    document.body.classList.add('loaded');
-
     const landscape_images = [
         "/assets/images/mobile_landscape_morning.png",
         "/assets/images/mobile_landscape_morning.png",
@@ -54,6 +50,9 @@ document.addEventListener("DOMContentLoaded", function () {
         skyImage.src = preloadedSkyImages[0].src;
         currentLandscapeImage = landscapeImage;
         currentSkyImage = skyImage;
+
+        document.body.classList.remove('loading');
+        document.body.classList.add('loaded');
     };
 
     floatButton.addEventListener('click', function () {
