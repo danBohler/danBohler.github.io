@@ -214,6 +214,7 @@ img.icon-night {
     flex-direction: column;
     justify-content: space-evenly;
     height: 80svh !important;
+    min-height: 400px;
     position: relative;
     margin: 0px;
 }

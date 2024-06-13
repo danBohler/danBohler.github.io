@@ -2,8 +2,6 @@
 
 /* Estilos para móviles */
 /* HEIGHT */
-
-/* Media query para pantallas con una altura menor o igual a 600px */
 @media (max-height: 600px) {
     .image-container img {
         height: auto;

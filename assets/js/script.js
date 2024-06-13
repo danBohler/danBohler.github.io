@@ -244,17 +244,26 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // const startPress = () => {
-    //     img.src = '/assets/buttons/arrow-button-up.svg';
-    // }
+    document.getElementById('iban').addEventListener('click', function() {
+        // El texto a copiar
+        const text = this.innerText;
 
-    // const endPress = () => {
-    //     img.src = '/assets/buttons/arrow-button-down.svg';
-    // }
+        // Crea un campo de texto oculto
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        document.body.appendChild(textArea);
 
-    // floatButton.addEventListener('mousedown', startPress);
-    // floatButton.addEventListener('mouseup', endPress);
+        // Selecciona el contenido del campo de texto
+        textArea.select();
+        textArea.setSelectionRange(0, 99999); // Para dispositivos móviles
 
-    // floatButton.addEventListener('touchstart', startPress);
-    // floatButton.addEventListener('touchend', endPress);
+        // Copia el texto al portapapeles
+        document.execCommand('copy');
+
+        // Elimina el campo de texto temporal
+        document.body.removeChild(textArea);
+
+        // Opcional: Muestra una alerta o un mensaje indicando que el texto ha sido copiado
+        alert('IBAN copiado al portapapeles');
+    });
 });
