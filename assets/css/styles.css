@@ -32,10 +32,12 @@ html {
 }
 
 body.loading #fixed {
+    opacity: 0;
     display: none;
 }
 
 body.loaded #fixed {
+    opacity: 1;
     display: block;
     animation: bodyFadeIn 1s ease-in;
 }

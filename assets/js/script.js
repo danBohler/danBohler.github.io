@@ -50,9 +50,12 @@ document.addEventListener("DOMContentLoaded", function () {
         skyImage.src = preloadedSkyImages[0].src;
         currentLandscapeImage = landscapeImage;
         currentSkyImage = skyImage;
-
-        document.body.classList.remove('loading');
-        document.body.classList.add('loaded');
+        
+        setTimeout(() => {
+            $("body").css("opacity", "1");
+            document.body.classList.remove('loading');
+            document.body.classList.add('loaded');
+        }, 500);
     };
 
     floatButton.addEventListener('click', function () {
@@ -148,10 +151,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const changeContent = (section) => {
         $(".ul_container").css("justify-content", "space-evenly");
         removeNightStyles();
-        
+
         const floatButton = $('#float-button');
-        floatButton.addClass('disabled'); 
-        
+        floatButton.addClass('disabled');
+
         switch (section) {
             case 0:
                 $("#scrollContainer").animate({
@@ -178,7 +181,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 img.classList.remove('rotate-back');
                 setTimeout(() => {
                     floatButton.removeClass('disabled'); // Habilita el botón
-                }, 1200,);
+                }, 1200, );
                 break;
             case 2:
                 $("#scrollContainer").animate({
@@ -247,31 +250,31 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    document.getElementById('iban').addEventListener('click', function() {
-       // El texto a copiar
-       const text = $(this).text();
+    document.getElementById('iban').addEventListener('click', function () {
+        // El texto a copiar
+        const text = $(this).text();
 
-       // Crea un campo de texto oculto
-       const textArea = $('<textarea>');
-       textArea.val(text);
-       $('body').append(textArea);
+        // Crea un campo de texto oculto
+        const textArea = $('<textarea>');
+        textArea.val(text);
+        $('body').append(textArea);
 
-       // Selecciona el contenido del campo de texto
-       textArea.select();
-       textArea[0].setSelectionRange(0, 99999); // Para dispositivos móviles
+        // Selecciona el contenido del campo de texto
+        textArea.select();
+        textArea[0].setSelectionRange(0, 99999); // Para dispositivos móviles
 
-       // Copia el texto al portapapeles
-       document.execCommand('copy');
+        // Copia el texto al portapapeles
+        document.execCommand('copy');
 
-       // Elimina el campo de texto temporal
-       textArea.remove();
+        // Elimina el campo de texto temporal
+        textArea.remove();
 
-       // Muestra la notificación
-       const notification = $('#notification');
-       notification.fadeIn(400).delay(3000).fadeOut(400);
+        // Muestra la notificación
+        const notification = $('#notification');
+        notification.fadeIn(400).delay(3000).fadeOut(400);
     });
 
-    document.getElementById('busInfo').addEventListener('click', function() {
+    document.getElementById('busInfo').addEventListener('click', function () {
         window.open('https://www.google.com/maps?q=43.483440,-5.438916', '_blank');
     });
 });
