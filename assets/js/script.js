@@ -245,26 +245,27 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     document.getElementById('iban').addEventListener('click', function() {
-        // El texto a copiar
-        const text = this.innerText;
+       // El texto a copiar
+       const text = $(this).text();
 
-        // Crea un campo de texto oculto
-        const textArea = document.createElement('textarea');
-        textArea.value = text;
-        document.body.appendChild(textArea);
+       // Crea un campo de texto oculto
+       const textArea = $('<textarea>');
+       textArea.val(text);
+       $('body').append(textArea);
 
-        // Selecciona el contenido del campo de texto
-        textArea.select();
-        textArea.setSelectionRange(0, 99999); // Para dispositivos móviles
+       // Selecciona el contenido del campo de texto
+       textArea.select();
+       textArea[0].setSelectionRange(0, 99999); // Para dispositivos móviles
 
-        // Copia el texto al portapapeles
-        document.execCommand('copy');
+       // Copia el texto al portapapeles
+       document.execCommand('copy');
 
-        // Elimina el campo de texto temporal
-        document.body.removeChild(textArea);
+       // Elimina el campo de texto temporal
+       textArea.remove();
 
-        // Opcional: Muestra una alerta o un mensaje indicando que el texto ha sido copiado
-        alert('IBAN copiado al portapapeles');
+       // Muestra la notificación
+       const notification = $('#notification');
+       notification.fadeIn(400).delay(3000).fadeOut(400);
     });
 
     document.getElementById('busInfo').addEventListener('click', function() {
